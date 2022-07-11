@@ -1,0 +1,127 @@
+.sign {
+    color: var(--white);
+    background-color: var(--blue-700);
+    padding: 3rem 2rem 5rem 2rem;
+
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas:
+    "title title"
+    "card1 card2";
+    gap: 0 3rem;
+}
+
+.sign h1 {
+    grid-area: title;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.sign h1 span {
+    font-weight: 700;
+}
+
+.sign .card {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    background-color: var(--purple-500); 
+    padding: 1rem;
+
+    grid-area: card1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: flex-end;
+    gap: 1rem 0;
+
+    -webkit-box-shadow: 0px 5px 15px -4px #000000; 
+    box-shadow: 0px 15px 15px -4px #000000;
+}
+
+.sign .card:last-child {
+    color: var(--black);
+    background-color: var(--white);
+
+    grid-area: card2;
+    justify-self: flex-start;
+}
+
+.sign .card h2 {
+    font-size: 3rem;
+}
+
+.sign .card > div span span {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 5px;
+}
+
+.sign .card div:last-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.sign .card div:last-child img{
+    width: 30px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+    cursor: pointer;
+}
+
+.sign .card:last-child div:last-child img{
+    filter: none;
+}
+
+.sign .card button {
+    width: fit-content;
+    color: var(--black);
+    background-color: var(--yellow-500);
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1rem;
+}
+
+.sale {
+    padding: 3rem 2rem 5rem 2rem;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 3rem;
+}
+
+.sale div:first-child {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sale div:first-child h2 {
+    font-size: 3rem;
+}
+
+.sale div:first-child button {
+    width: fit-content;
+    color: var(--black);
+    background-color: var(--yellow-500);
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1rem;
+}
+
+.sale div:first-child span {
+    font-size: 0.8rem;
+}

@@ -1,0 +1,119 @@
+:root {
+    --black: #000000;
+    --white: #ffffff;
+
+    --purple-500: #222fe6;
+    --yellow-500: #ffb116;
+    --orange-500: #f03612;
+    --pink-500: #9e71d8;
+    --blue-500: #2181ce;
+    --blue-700: #00376a;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+textarea,
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+    font-weight: 700;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    line-height: 1.5rem;
+}
+
+img {
+    width: 100%;
+}
+
+nav {
+    background-color: var(--white);
+    height: 70px;
+    padding: 0.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > img {
+    max-width: 200px;
+}
+
+.wpp-container {
+    height: 30px;
+    font-size: 0.8rem;
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "icon1 span1"
+    "icon1 span2";
+    gap: 0 5px;
+}
+
+.wpp-container img {
+    grid-area: icon1;
+}
+
+.wpp-container span:nth-child(1) {
+    grid-area: span1;
+}
+
+.wpp-container span:nth-child(2) {
+    grid-area: span2;
+    font-weight: 700;
+}
+
+@media (min-width: 1440px) {
+    html {
+        font-size: 118, 8%;
+    }
+}
+
+@media (max-width: 1080px) {
+    html {
+        font-size: 93.75%;
+    }
+}
+
+@media (max-width: 720px) {
+    html {
+        font-size: 87.5%;
+    }
+}
