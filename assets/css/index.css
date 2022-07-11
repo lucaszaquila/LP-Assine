@@ -89,13 +89,14 @@
 }
 
 .sale {
-    padding: 3rem 2rem 5rem 2rem;
+    padding: 3rem 2rem;
+    background-color: var(--gray-400);
 
     display: grid;
     justify-items: center;
     align-items: center;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0 3rem;
+    gap: 0 1rem;
 }
 
 .sale div:first-child {
@@ -124,4 +125,42 @@
 
 .sale div:first-child span {
     font-size: 0.8rem;
+}
+
+.sale .card {
+    width: 100%;
+    min-width: 300px;
+    max-width: 450px;
+    border-radius: 10px;
+    background-color: var(--purple-500); 
+    color: var(--white);
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.sale .card:last-child {
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.sale .card h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.sale .card h2 span {
+    display: inline-block;
+    width: 100%;
+    font-size: 3rem;
+}
+
+.sale .card ul {
+    list-style-image: url('../img/check.svg');
+    list-style-position: outside;
 }
