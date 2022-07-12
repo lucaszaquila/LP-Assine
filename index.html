@@ -9,11 +9,15 @@
     <!-- Montserrat Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/global.css">
     <link rel="stylesheet" href="./assets/css/index.css">
+
+    <!-- Scripts -->
     <script type="text/javascript" src="./assets/js/main.js"></script>
+    <script type="text/javascript" src="./assets/js/youtube-api.js"></script>
 </head>
 <body>
     <nav>
@@ -26,45 +30,138 @@
         </div>
     </nav>
 
+
     <main>
         <section class="sign">
             <h1>
                 Escolha seu <span>plano ideal</span>
             </h1>
 
-            <div class="card">
-                <h2>Impresso</h2>
-
-                <div>
-                    <span>
-                        R$ <span>33,40</span> /mês
-                    </span>
+            <div class="container">
+                <div class="card">
+                    <h2>Impresso</h2>
+    
+                    <div>
+                        <span>
+                            R$ <span>33,40</span> /mês
+                        </span>
+                    </div>
+    
+                    <div class="options">
+                        <img src="./assets/img/angles-down.svg" alt="Mais">
+                        <button>
+                            Assine agora
+                        </button>
+                    </div>
                 </div>
+                <div class="details">
+                    <div>
+                        <p>Diária</p>
 
-                <div>
-                    <img src="./assets/img/angles-down.svg" alt="Mais">
-                    <button>
-                        Assine agora
-                    </button>
+                        <span>
+                            R$ <span>78,20</span> /mês
+                        </span>
+
+                        <button>
+                            Assinar plano
+                        </button>
+                    </div>
+                    <hr>
+                    <div>
+                        <p>
+                            Fim de semana
+                            <br>
+                            <span>
+                                Sábado e Domingo
+                            </span>
+                        </p>
+
+                        <span>
+                            R$ <span>33,40</span> /mês
+                        </span>
+
+                        <button>
+                            Assinar plano
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
-                <h2>Digital</h2>
-
-                <div>
-                    <span>
-                        R$ <span>1,90</span> /mês
-                    </span>
+            <div class="container">
+                <div class="card">
+                    <h2>Digital</h2>
+    
+                    <div>
+                        <span>
+                            R$ <span>1,90</span> /mês
+                        </span>
+                    </div>
+    
+                    <div class="options">
+                        <img src="./assets/img/angles-down.svg" alt="Mais">
+                        <button>
+                            Assine agora
+                        </button>
+                    </div>
                 </div>
+                <div class="details">
+                    <div>
+                        <img src="./assets/img/50off.png" alt="50%">
 
-                <div>
-                    <img src="./assets/img/angles-down.svg" alt="Mais">
-                    <button>
-                        Assine agora
-                    </button>
+                        <p>Anual</p>
+
+                        <span>
+                            R$ <span>9,90</span> /mês
+                        </span>
+
+                        <div>
+                            a partir do segundo mês
+                        </div>
+
+                        <button>
+                            Assinar plano
+                        </button>
+                    </div>
+                    <hr>
+                    <div>
+                        <img src="./assets/img/35off.png" alt="35%">
+
+
+                        <p>Semestral</p>
+
+                        <span>
+                            R$ <span>12,90</span> /mês
+                        </span>
+
+                        <div>
+                            a partir do segundo mês
+                        </div>
+
+                        <button>
+                            Assinar plano
+                        </button>
+                    </div>
+                    <hr>
+                    <div>
+                        <p>
+                            Trimestral
+                        </p>
+
+                        <span>
+                            R$ <span>19,90</span> /mês
+                        </span>
+
+                        <div>
+                            a partir do segundo mês
+                        </div>
+
+                        <button>
+                            Assinar plano
+                        </button>
+                    </div>
                 </div>
             </div>
+
         </section>
 
         <section class="sale">
@@ -105,7 +202,64 @@
             </div>
         </section>
 
-        <input id="cep" type="text">
+        <section class="benefits">
+            <div class="side">
+                <div>
+                    <span>128 <span>anos</span></span>
+                    <p>de Jornal A Tribuna</p>
+                </div>
+                <img src="./assets/img/hand.png" alt="Celular com app A Tribuna">
+            </div>
+            <div class="side">
+                <div>
+                    <div>
+                        <img src="./assets/img/browser.svg" alt="Portal A Tribuna">
+                        <p>Tenha acesso a todas as noticias do Portal A Tribuna</p>
+                    </div>
+                    <div>
+                        <img src="./assets/img/phone.svg" alt="Jornal Impresso" style="padding: 0.5rem;">
+                        <p>Acesso diario do jornal impresso no formato online</p>
+                    </div>
+                    <div>
+                        <img src="./assets/img/stack.svg" alt="Acervo Digital">
+                        <p>Acervo digital desde 1960 para conhecer a historia e relembrar grande momentos</p>
+                    </div>
+                    <div>
+                        <img src="./assets/img/plus.png" alt="Muito mais">
+                        <p>E mais...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="club">
+            <img src="./assets/img/woman.png" alt="Modelo">
+            <span>O Clube foi feito para você que gosta de economizar e se divertir</span>
+            <div>
+                <span>desconto de até</span>
+                <span>60%</span>
+            </div>
+        </section>
+
+        <section class="video">
+            <!-- <div id="player"></div> -->
+        </section>
     </main>
+
+    <footer>
+        <ul>
+            <li><a href="">Portal A Tribuna</a></li>
+            <li><a href="">Clube A Tribuna</a></li>
+            <li><a href="">Edição Digital</a></li>
+        </ul>
+        <div>
+            <p style="text-transform: uppercase;">A Tribuna de Santos Jornal e Editoria LTDA | CNPJ: 58.183.401/0001-04</p>
+            <p>Rua João Pessoa, 350 - Paquetá, Santos/SP - 11013-002</p>
+            <p>
+                Central de Atendimento: (13)3102-7200 | atendimento@grupo-tribuna.com <br/>
+                De segunda a sexta, das 7h às 18h | Aos sábados, domingos e feriados das 7h às 12h
+            </p>
+        </div>
+    </footer>
 </body>
 </html>

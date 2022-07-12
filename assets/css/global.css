@@ -12,6 +12,8 @@
     --pink-500: #9e71d8;
     --blue-500: #2181ce;
     --blue-700: #00376a;
+
+    --shadow-b: 0px 15px 15px -4px #000000;
 }
 
 * {
@@ -34,6 +36,11 @@ button {
 
 button {
     cursor: pointer;
+    transition: filter 0.5s ease-in-out;
+}
+
+button:hover {
+    filter: brightness(1.1) contrast(1.2);
 }
 
 h1,
@@ -83,7 +90,7 @@ nav > img {
 
     display: grid;
     align-items: center;
-    grid-template-columns: 50px 1fr;
+    grid-template-columns: 30px 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
     "icon1 span1"
@@ -102,6 +109,31 @@ nav > img {
 .wpp-container span:nth-child(2) {
     grid-area: span2;
     font-weight: 700;
+}
+
+footer {
+    color: var(--white);
+    background-color: var(--blue-700);
+    padding: 3rem;
+
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+footer ul {
+    list-style: none;
+    font-weight: 600;
+}
+
+footer ul li + li,
+footer > div p + p {
+    margin-top: 0.5rem;
+}
+
+footer > div {
+    text-align: right;
 }
 
 @media (min-width: 1440px) {

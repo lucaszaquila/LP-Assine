@@ -23,31 +23,46 @@
     font-weight: 700;
 }
 
-.sign .card {
+.sign .container {
+    grid-area: card1;
+    justify-self: flex-end;
+
     width: 100%;
     max-width: 500px;
+    background: tranparent;
+}
+
+.sign .container:last-child {
+    grid-area: card2;
+    justify-self: flex-start;
+}
+
+.sign .container:last-child .card {
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.sign .container:last-child .card .options img{
+    filter: none;
+}
+
+.sign .container:last-child .details {
+    border-color: var(--white);
+}
+
+.sign .card {
     border-radius: 10px;
     background-color: var(--purple-500); 
     padding: 1rem;
 
-    grid-area: card1;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-self: flex-end;
+
     gap: 1rem 0;
 
-    -webkit-box-shadow: 0px 5px 15px -4px #000000; 
-    box-shadow: 0px 15px 15px -4px #000000;
-}
-
-.sign .card:last-child {
-    color: var(--black);
-    background-color: var(--white);
-
-    grid-area: card2;
-    justify-self: flex-start;
+    -webkit-box-shadow: var(--shadow-b); 
+    box-shadow: var(--shadow-b);
 }
 
 .sign .card h2 {
@@ -60,24 +75,21 @@
     margin: 0 5px;
 }
 
-.sign .card div:last-child{
+.sign .card .options{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
 }
 
-.sign .card div:last-child img{
+.sign .card .options img{
     width: 30px;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
     cursor: pointer;
 }
 
-.sign .card:last-child div:last-child img{
-    filter: none;
-}
-
-.sign .card button {
+.sign .card button,
+.sign .details button {
     width: fit-content;
     color: var(--black);
     background-color: var(--yellow-500);
@@ -86,6 +98,62 @@
     font-weight: 700;
     text-transform: uppercase;
     padding: 1rem;
+}
+
+.sign .details {
+    width: 80%;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    border: 3px solid var(--purple-500);
+    border-top: none;
+}
+
+.sign .details > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    position: relative;
+}
+
+.sign .details > div img{
+    width: 50px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.sign .details > div p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1rem;
+}
+
+.sign .details > div p span {
+    display: inline-block; 
+    font-size: 0.8rem; 
+    font-weight: normal; 
+    width: 100%; 
+    text-align: right;
+    font-style: italic;
+}
+
+.sign .details > div span span {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 0 5px;
+}
+
+.sign .details > div div {
+    position: relative; 
+    top: -1rem; 
+    font-size: 0.7rem;
+}
+
+.sign .details hr {
+    margin: 2rem 0;
 }
 
 .sale {
@@ -162,5 +230,180 @@
 
 .sale .card ul {
     list-style-image: url('../img/check.svg');
-    list-style-position: outside;
+}
+
+.benefits {
+    background-color: var(--blue-700);
+    color: var(--white);
+    padding-top: 5rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.benefits .side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.benefits .side:first-child > div {
+    height: 50%;
+}
+
+.benefits .side:first-child > div > span {
+    font-size: 8rem;
+    line-height: 8rem;
+    font-weight: 900;
+
+    display: flex;
+    align-items: center;''
+    gap: 0.5rem;
+}
+
+.benefits .side:first-child > div > span > span {
+    font-size: 2rem;
+}
+
+.benefits .side:first-child > div > p {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    text-align: center
+}
+
+.benefits .side:first-child  img {
+    transform: translate(-35%, 1px);
+    width: 60%;
+    max-height: 400px;
+}
+
+.benefits .side:last-child {
+    align-items: flex-end;
+}
+
+.benefits .side:last-child > div {
+    width: 80%;
+    background-color: var(--white);
+    color: var(--black);
+    padding: 2rem;
+    border-radius: 10px 0 0 10px;
+}
+
+.benefits .side:last-child > div > div {
+    max-width: 360px;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    position: relative;
+    left: -70px;
+}
+
+.benefits .side:last-child > div > div + div {
+    margin-top: 2rem;
+}
+
+.benefits .side:last-child > div > div img {
+    width: 80px;
+    height: 80px;
+    padding: 0.9rem;
+    border-radius: 10px;
+    background-color: var(--purple-500);
+    image-rendering: pixelated;
+}
+
+.club {
+    color: var(--white);
+    padding: 1rem 0 0 1rem;
+    background-image: url('../img/map.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: grid;
+    grid-template-columns: 70% 30%;
+
+    position: relative;
+}
+
+.club img {
+    grid-column: 1;
+
+    width: 45%;
+}
+
+.club > span {
+    grid-column: 1;
+
+    display: block;
+    max-width: 350px;
+    font-weight: 700;
+    text-align: center;
+    padding: 30px;
+    z-index: 1;
+
+    position: absolute;
+    left: 30%;
+    top: 100px;
+    transform: scale(1.2);
+}
+
+.club > span:before {
+    content: "";    
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    position: absolute;
+    top: 10px;
+    left: -10px;
+
+    background-image: url('../img/balloon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    transform: scaleX(-1);
+}
+
+.club div {
+    grid-column: 2;
+
+    height: fit-content;
+    min-width: 350px;
+    padding: 1rem 2rem;
+    border-radius: 999px 0 0 999px;
+    background-color: var(--pink-500);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    bottom: 5%;
+    right: 0px;
+}
+
+.club div span:first-child {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+}
+
+.club div span:last-child {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 4.5rem;
+}
+
+.video {
+    width: 100%;
+}
+
+.video iframe {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
 }
