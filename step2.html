@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assine A Tribuna | Pré-Cadastro</title>
+
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/sign.css">
+    <link rel="stylesheet" href="./assets/css/step2.css">
+
+    <!-- Scripts -->
+    <script defer src="./assets/js/masks.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="">
+            <img src="./assets/img/atribuna.svg" alt="A Tribuna">
+        </a>
+
+        <div class="wpp-container">
+            <img src="./assets/img/whatsapp.png" alt="Whatsapp">
+            <span>(13) 2102-7200</span>
+            <span>Central do Assinante</span>
+        </div>
+    </nav>
+
+    <main>
+        <header>
+            <span>Você está assinando</span>
+            <h1>A Tribuna Digital Anual</h1>
+
+            <div>
+                <div style="background-color: var(--purple-500);"></div>
+                <hr style="border: 1px solid var(--black);">
+                <div style="background-color: var(--purple-500);"></div>
+                <hr>
+                <div></div>
+            </div>
+        </header>
+
+        <form action="">
+            <h2>Pagamento</h2>
+
+            <div class="container" style="grid-area: 2 / 1 / 2 / -1;">
+                <div class="field">
+                    <input type="radio" value="credit" name="payment" id="credit">
+                    <label for="credit">Cartão de crédito</label>
+                </div>
+
+                <div class="field">
+                    <input type="radio" value="debit" name="payment" id="debit">
+                    <label for="debit">Débito em conta</label>
+                </div>
+
+                <div class="field">
+                    <input type="radio" value="ticket" name="payment" id="ticket">
+                    <label for="ticket">Boleto</label>
+                </div>
+
+                <div class="field">
+                    <input type="radio" value="pix" name="payment" id="pix">
+                    <label for="pix">Pix</label>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="card">Nº do cartão</label> 
+                <input type="number" name="card" id="card">
+            </div>
+
+            <div class="container">
+                <img src="./assets/img/sign/visa.png" alt="Visa">
+                <img src="./assets/img/sign/master.png" alt="Mastercard">
+                <img src="./assets/img/sign/elo.png" alt="Elo">
+                <img src="./assets/img/sign/amex.png" alt="Amex">
+                <img src="./assets/img/sign/dinners.png" alt="Dinners">
+            </div>
+
+            <div class="field">
+                <label for="name">Nome do Títular</label>
+                <input type="text" name="name" id="name">
+            </div>
+
+            <div class="field">
+                <label for="validity">Validade </label> <span>(mm/aa)</span>
+                <input type="text" name="validity" id="validity" data-js="date">
+            </div>
+
+            <div class="field">
+                <label for="code">Código de segurança</label>
+                <input type="number" name="code" id="code">
+            </div>
+
+            <div class="field" style="grid-area: 6 / 1 / 6 / -1;">
+                <input type="checkbox" name="terms" id="terms">
+                <label for="terms">Li e concordo com a política de privacidade e com as condições dos termos</label>
+            </div>
+
+            <button style="grid-area: 7 / 1 / 7 / -1;">
+                Continuar
+            </button>
+        </form>
+    </main>
+    
+</body>
+</html>

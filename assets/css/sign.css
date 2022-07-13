@@ -1,0 +1,95 @@
+nav {
+    background-color: var(--blue-700);
+    color: var(--white)
+}
+
+nav a img{
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(119deg) brightness(103%) contrast(102%);
+}
+
+main {
+    padding: 2rem;
+
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    gap: 2rem;
+}
+
+header, form {
+    max-width: 1000px;
+    justify-self: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header span {
+    letter-spacing: 2px;
+}
+
+header > div {
+    margin-top: 2rem;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+header > div div {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: var(--gray-500);
+}
+
+header > div hr {
+    width: 150px;
+    height: 2px;
+}
+
+form .field label {
+    font-weight: 600;
+}
+
+form .field input {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--gray-400);
+}
+
+form .field span {
+    color: var(--gray-500);
+    font-size: 0.8rem;
+}
+
+form .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+form button {
+    width: 300px;
+    color: var(--white);
+    background-color: var(--purple-500);
+    border-radius: 10px;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    justify-self: end;
+}
+
+form h2 {
+    grid-area: 1 / 1 / 1 / 2 span;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    width: fit-content;
+}
