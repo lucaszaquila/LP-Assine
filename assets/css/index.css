@@ -29,7 +29,6 @@
 
     width: 100%;
     max-width: 500px;
-    background: tranparent;
 }
 
 .sign .container:last-child {
@@ -42,7 +41,7 @@
     background-color: var(--white);
 }
 
-.sign .container:last-child .card .options img{
+.sign .container:last-child .card .options img {
     filter: none;
 }
 
@@ -75,21 +74,28 @@
     margin: 0 5px;
 }
 
-.sign .card .options{
+.sign .card .options {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
 }
 
-.sign .card .options img{
-    width: 30px;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
-    cursor: pointer;
+.sign .card .options button {
+    background: transparent;
+    border: none;
+    transform: rotate(0deg);
+
+    transition: transform 0.3s;
 }
 
-.sign .card button,
-.sign .details button {
+.sign .card .options img {
+    width: 30px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+.sign .card a,
+.sign .details a {
     width: fit-content;
     color: var(--black);
     background-color: var(--yellow-500);
@@ -101,11 +107,14 @@
 }
 
 .sign .details {
+    display: none;
     width: 80%;
     margin: 0 auto;
     padding: 3rem 2rem;
     border: 3px solid var(--purple-500);
     border-top: none;
+
+    transition: transform 0.5s ease-in-out;
 }
 
 .sign .details > div {
@@ -117,7 +126,7 @@
     position: relative;
 }
 
-.sign .details > div img{
+.sign .details > div img {
     width: 50px;
 
     position: absolute;
@@ -156,6 +165,24 @@
     margin: 2rem 0;
 }
 
+.sign #printed-details,
+.sign #digital-details {
+    overflow: hidden;
+}
+
+.sign .overflow-container {
+    overflow: hidden;
+}
+
+.sign .container.active .details {
+    display: block;
+    transform: translateY(0%);
+}
+
+.sign .container.active .options button {
+    transform: rotate(-180deg);
+}
+
 .sale {
     padding: 3rem 2rem;
     background-color: var(--gray-400);
@@ -180,7 +207,7 @@
     font-size: 3rem;
 }
 
-.sale div:first-child button {
+.sale div:first-child a {
     width: fit-content;
     color: var(--black);
     background-color: var(--yellow-500);

@@ -16,12 +16,14 @@
     <link rel="stylesheet" href="./assets/css/index.css">
 
     <!-- Scripts -->
-    <script type="text/javascript" src="./assets/js/main.js"></script>
+    <script defer type="text/javascript" src="./assets/js/index.js"></script>
     <script type="text/javascript" src="./assets/js/youtube-api.js"></script>
 </head>
 <body>
     <nav>
-        <img src="./assets/img/atribuna.svg" alt="A Tribuna">
+        <a href="">
+            <img src="./assets/img/atribuna.svg" alt="A Tribuna">
+        </a>
 
         <div class="wpp-container">
             <img src="./assets/img/whatsapp.png" alt="Whatsapp">
@@ -30,14 +32,13 @@
         </div>
     </nav>
 
-
     <main>
         <section class="sign">
             <h1>
                 Escolha seu <span>plano ideal</span>
             </h1>
 
-            <div class="container">
+            <div class="container" id="printed">
                 <div class="card">
                     <h2>Impresso</h2>
     
@@ -48,46 +49,50 @@
                     </div>
     
                     <div class="options">
-                        <img src="./assets/img/angles-down.svg" alt="Mais">
-                        <button>
-                            Assine agora
+                        <button onclick="showDetails('printed')">
+                            <img src="./assets/img/angles-down.svg" alt="Mais">
                         </button>
+                        <a href="">
+                            Assine agora
+                        </a>
                     </div>
                 </div>
-                <div class="details">
-                    <div>
-                        <p>Diária</p>
-
-                        <span>
-                            R$ <span>78,20</span> /mês
-                        </span>
-
-                        <button>
-                            Assinar plano
-                        </button>
-                    </div>
-                    <hr>
-                    <div>
-                        <p>
-                            Fim de semana
-                            <br>
+                <div class="overflow-container">
+                    <div class="details" style="transform: translateY(-100%);">
+                        <div>
+                            <p>Diária</p>
+    
                             <span>
-                                Sábado e Domingo
+                                R$ <span>78,20</span> /mês
                             </span>
-                        </p>
-
-                        <span>
-                            R$ <span>33,40</span> /mês
-                        </span>
-
-                        <button>
-                            Assinar plano
-                        </button>
+    
+                            <a href="">
+                                Assinar plano
+                            </a>
+                        </div>
+                        <hr>
+                        <div>
+                            <p>
+                                Fim de semana
+                                <br>
+                                <span>
+                                    Sábado e Domingo
+                                </span>
+                            </p>
+    
+                            <span>
+                                R$ <span>33,40</span> /mês
+                            </span>
+    
+                            <a href="">
+                                Assinar plano
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="container">
+            <div class="container" id="digital">
                 <div class="card">
                     <h2>Digital</h2>
     
@@ -98,70 +103,73 @@
                     </div>
     
                     <div class="options">
-                        <img src="./assets/img/angles-down.svg" alt="Mais">
-                        <button>
-                            Assine agora
+                        <button onclick="showDetails('digital')">
+                            <img src="./assets/img/angles-down.svg" alt="Mais">
                         </button>
+                        <a href="">
+                            Assine agora
+                        </a>
                     </div>
                 </div>
-                <div class="details">
-                    <div>
-                        <img src="./assets/img/50off.png" alt="50%">
-
-                        <p>Anual</p>
-
-                        <span>
-                            R$ <span>9,90</span> /mês
-                        </span>
-
+                <div class="overflow-container">
+                    <div class="details" style="transform: translateY(-100%);">
                         <div>
-                            a partir do segundo mês
+                            <img src="./assets/img/50off.png" alt="50%">
+    
+                            <p>Anual</p>
+    
+                            <span>
+                                R$ <span>9,90</span> /mês
+                            </span>
+    
+                            <div>
+                                a partir do segundo mês
+                            </div>
+    
+                            <a href="">
+                                Assinar plano
+                            </a>
                         </div>
-
-                        <button>
-                            Assinar plano
-                        </button>
-                    </div>
-                    <hr>
-                    <div>
-                        <img src="./assets/img/35off.png" alt="35%">
-
-
-                        <p>Semestral</p>
-
-                        <span>
-                            R$ <span>12,90</span> /mês
-                        </span>
-
+                        <hr>
                         <div>
-                            a partir do segundo mês
+                            <img src="./assets/img/35off.png" alt="35%">
+    
+    
+                            <p>Semestral</p>
+    
+                            <span>
+                                R$ <span>12,90</span> /mês
+                            </span>
+    
+                            <div>
+                                a partir do segundo mês
+                            </div>
+    
+                            <a href="">
+                                Assinar plano
+                            </a>
                         </div>
-
-                        <button>
-                            Assinar plano
-                        </button>
-                    </div>
-                    <hr>
-                    <div>
-                        <p>
-                            Trimestral
-                        </p>
-
-                        <span>
-                            R$ <span>19,90</span> /mês
-                        </span>
-
+                        <hr>
                         <div>
-                            a partir do segundo mês
+                            <p>
+                                Trimestral
+                            </p>
+    
+                            <span>
+                                R$ <span>19,90</span> /mês
+                            </span>
+    
+                            <div>
+                                a partir do segundo mês
+                            </div>
+    
+                            <a href="">
+                                Assinar plano
+                            </a>
                         </div>
-
-                        <button>
-                            Assinar plano
-                        </button>
                     </div>
                 </div>
             </div>
-
         </section>
 
         <section class="sale">
@@ -169,9 +177,9 @@
                 <h2>
                     Convênio <br>A Tribuna
                 </h2>
-                <button>
+                <a href="">
                     Assine agora
-                </button>
+                </a>
                 <span>Desconto exclusivo para empresas conveniadas</span>
             </div>
 
@@ -256,7 +264,7 @@
             <p style="text-transform: uppercase;">A Tribuna de Santos Jornal e Editoria LTDA | CNPJ: 58.183.401/0001-04</p>
             <p>Rua João Pessoa, 350 - Paquetá, Santos/SP - 11013-002</p>
             <p>
-                Central de Atendimento: (13)3102-7200 | atendimento@grupo-tribuna.com <br/>
+                Central de Atendimento: <img src="./assets/img/whatsapp.svg" alt="Whatsapp"> (13)3102-7200 | atendimento@grupo-tribuna.com <br/>
                 De segunda a sexta, das 7h às 18h | Aos sábados, domingos e feriados das 7h às 12h
             </p>
         </div>
