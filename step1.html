@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assine A Tribuna | Pré-Cadastro</title>
+
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/sign.css">
+    <link rel="stylesheet" href="./assets/css/step1.css">
+
+    <!-- Scripts -->
+    <script defer src="./assets/js/masks.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="#">
+            <img src="./assets/img/atribuna.svg" alt="A Tribuna">
+        </a>
+
+        <div class="wpp-container">
+            <img src="./assets/img/whatsapp.png" alt="Whatsapp">
+            <span>(13) 2102-7200</span>
+            <span>Central do Assinante</span>
+        </div>
+    </nav>
+
+    <main>
+        <header>
+            <span>Você está assinando</span>
+            <h1>A Tribuna Digital Anual</h1>
+
+            <div>
+                <div style="background-color: var(--purple-500);"></div>
+                <hr>
+                <div></div>
+                <hr>
+                <div></div>
+            </div>
+        </header>
+
+        <form action="">
+            <h2>Pré-Cadastro</h2>
+
+            <div class="field">
+                <label for="cpf">CPF</label> <span>(apenas números)</span>
+                <input type="text" name="cpf" id="cpf" data-js="cpf">
+            </div>
+
+            <div class="field">
+                <label for="name">Nome</label>
+                <input type="text" name="name" id="name">
+            </div>
+
+            <div class="field">
+                <label for="phone">Telefone</label>
+                <input type="text" name="phone" id="phone" data-js="phone">
+            </div>
+
+            <div class="field">
+                <label for="email">E-mail </label> <span>(ele será utilizado no seu acesso)</span>
+                <input type="email" name="email" id="email">
+            </div>
+
+            <div class="field">
+                <label for="password">Senha</label>
+                <input type="password" name="password" id="password">
+                <span>Para uma senha forte, escolha pelo menos uma letra e evite números sequenciais</span>
+            </div>
+
+            <button style="grid-area: 5 / 2 / 5 / -1;">
+                Continuar
+            </button>
+        </form>
+    </main>
+    
+</body>
+</html>
