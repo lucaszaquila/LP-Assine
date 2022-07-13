@@ -1,6 +1,0 @@
-form {
-    display: grid;
-    grid-template-columns: 40% 50%;
-    justify-content: center;
-    gap: 1rem;
-}

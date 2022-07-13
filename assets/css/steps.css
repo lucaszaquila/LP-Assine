@@ -50,11 +50,21 @@ header > div hr {
     height: 2px;
 }
 
+form {
+    width: 100%;
+    
+    display: grid;
+    grid-template-columns: 40% 50%;
+    justify-content: center;
+    gap: 1rem;
+}
+
 form .field label {
     font-weight: 600;
 }
 
-form .field input {
+form .field input,
+form .field select {
     width: 100%;
     margin-top: 0.5rem;
     padding: 0.5rem;
@@ -71,6 +81,16 @@ form .field span {
 form .container {
     display: flex;
     justify-content: space-between;
+    gap: 1rem;
+}
+
+form .container img {
+    width: fit-content;
+    height: fit-content;
+}
+
+form .container.address .field{
+    width: 100%;
 }
 
 form button {
@@ -79,9 +99,11 @@ form button {
     background-color: var(--purple-500);
     border-radius: 10px;
     border: none;
+    margin-top: 2rem;
     padding: 0.5rem 1rem;
     text-transform: uppercase;
     font-weight: 700;
+
     justify-self: end;
 }
 
