@@ -50,7 +50,7 @@
 
             <div class="container" style="grid-area: 2 / 1 / 2 / -1;">
                 <div class="field">
-                    <input type="radio" value="credit" name="payment" id="credit">
+                    <input checked type="radio" value="credit" name="payment" id="credit">
                     <label for="credit">Cartão de crédito</label>
                 </div>
 
@@ -72,7 +72,7 @@
 
             <div class="field">
                 <label for="card">Nº do cartão</label> 
-                <input type="number" name="card" id="card">
+                <input type="number" name="card" id="card" data-js="card">
             </div>
 
             <div class="container">
@@ -84,6 +84,7 @@
                 <input type="text" name="name" id="name">
             </div>
 
+
             <div class="field">
                 <label for="validity">Validade </label> <span>(mm/aa)</span>
                 <input type="text" name="validity" id="validity" data-js="date">
@@ -94,6 +95,43 @@
                 <input type="number" name="code" id="code">
             </div>
 
+            <!-- aqui -->
+            <div class="field">
+                <label for="bank">Selecione o seu banco:</label>
+                <div id="bank">
+                    <input type="radio">
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="holder">Titular:</label>
+                <input type="text" name="holder" id="holder">
+            </div>
+
+            <div class="field">
+                <label for="agency">Agência:</label>
+                <input type="text" name="agency" id="agency">
+            </div>
+
+            <div class="field">
+                <label for="agency_digit">Dígito:</label>
+                <input type="text" name="agency_digit" id="agency_digit">
+            </div>
+
+            <div class="field">
+                <label for="account">Conta:</label>
+                <input type="text" name="account" id="account">
+            </div>
+
+            <div class="field">
+                <label for="account_digit">Dígito:</label>
+                <input type="text" name="account_digit" id="account_digit">
+            </div>
+
+            <div class="field">
+                <p>LEIA COM ATENÇÃO: após a finalização do pedido de assinatura, você precisará autorizar "A Tribuna" a realizar o débito na sua conta em um prazo de até 72 horas. Você pode autorizar pelo aplicativo no seu celular, pelo site, nos caixas eletrônicos ou agências. </p>
+            </div>
+            
             <div class="field" style="grid-area: 6 / 1 / 6 / -1;">
                 <input type="checkbox" name="terms" id="terms" required>
                 <label for="terms" style="color: var(--gray-500); font-weight: normal;">Li e concordo com a política de privacidade e com as condições dos termos</label>

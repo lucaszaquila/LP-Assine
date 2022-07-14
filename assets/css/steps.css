@@ -15,6 +15,10 @@ main {
     gap: 2rem;
 }
 
+main > img {
+    max-width: 500px;
+}
+
 header, form {
     max-width: 1000px;
     justify-self: center;
@@ -59,6 +63,10 @@ form {
     gap: 1rem;
 }
 
+form .field {
+    position: relative;
+}
+
 form .field label {
     font-weight: 600;
 }
@@ -76,6 +84,16 @@ form .field select {
 form .field span {
     color: var(--gray-500);
     font-size: 0.8rem;
+}
+
+form .field img {
+    width: 1rem;
+    cursor: pointer;
+    filter: invert(27%) sepia(0%) saturate(1637%) hue-rotate(170deg) brightness(102%) contrast(75%);
+
+    position: absolute;
+    top: 2.3rem;
+    right: 13px;
 }
 
 form .container {
@@ -114,4 +132,9 @@ form h2 {
 form input[type="radio"],
 form input[type="checkbox"] {
     width: fit-content;
+}
+
+.confetti {
+    position: absolute;
+    top: 50vh;
 }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assine A Tribuna | Pré-Cadastro</title>
+
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/steps.css">
+
+    <!-- Scripts -->
+    <script defer src="./assets/js/masks.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+
+</head>
+<body>
+    <nav>
+        <a href="#">
+            <img src="./assets/img/atribuna.svg" alt="A Tribuna">
+        </a>
+    </nav>
+
+    <main style="justify-content: center; gap: 1rem;">
+        <header>
+            <span style="letter-spacing: normal; font-size: 1.5rem; font-weight: 500;">Parabéns! Agora você é</span>
+            <h1 data-confetti>Assinante A Tribuna</h1>
+        </header>
+        <img src="./assets/img/access.png" alt="Todos os acessos A Tribuna e Clube do Assinante">
+        <p data-confetti>
+            Você receberá as suas informações de acesso no e-mail cadastrado.<br>
+            Em caso de dúvidas, entre em contato com a Central do Assinante.
+        </p>
+        <div class="wpp-container" style="width: fit-content; transform: scale(1.4); margin: 0 auto;">
+            <img src="./assets/img/whatsapp.png" alt="Whatsapp">
+            <span>(13) 2102-7200</span>
+            <span>Central do Assinante</span>
+        </div>
+    </main>
+    <div data-confetti class="confetti" style="right: 0;"></div>
+    <div data-confetti class="confetti" style="left: 0;"></div>
+    <script>
+        const confetti = document.querySelectorAll('[data-confetti]');
+        confetti.forEach((element) => {
+            party.confetti(element);
+        })
+    </script>
+</body>
+</html>

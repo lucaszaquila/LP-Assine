@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function (){
-    document.querySelectorAll('.options button').forEach(function (elem){
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.options button').forEach(function(elem) {
         elem.addEventListener('click',function (e){
             const container = document.querySelector('[data-type="'+e.currentTarget.dataset.subscription+'"]')
             container.classList.toggle('active')
