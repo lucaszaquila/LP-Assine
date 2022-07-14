@@ -11,13 +11,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 
+    <!-- React scripts -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/global.css">
     <link rel="stylesheet" href="./assets/css/index.css">
 
     <!-- Scripts -->
     <script defer type="text/javascript" src="./assets/js/index.js"></script>
-    <script type="text/javascript" src="./assets/js/youtube-api.js"></script>
+    <script type="text/javascript" src="./assets/js/youtubeApi.js"></script>
+    <script defer type="text/javascript" src="./assets/js/generatePartners.js"></script>
 </head>
 <body>
     <nav>
@@ -98,7 +104,12 @@
 
                     <div>
                         <span>
-                            R$ <span>1,90</span> /mês
+                            R$ 
+                            <span>1,90</span> 
+                            <div style="display: inline-block;">
+                                <span style="font-size: 0.9rem; font-weight: 400;">no primeiro </span>
+                                <br> /mês
+                            </div>
                         </span>
                     </div>
 
@@ -106,7 +117,7 @@
                         <button data-subscription="digital">
                             <img src="./assets/img/angles-down.svg" alt="Mais">
                         </button>
-                        <a href="">
+                        <button onclick="trigger()">
                             Assine agora
                         </a>
                     </div>
@@ -198,7 +209,6 @@
 
             <div class="card">
                 <h2>Impresso <span>30%</span></h2>
-                <span>+1 mês gratis</span>
                 <ul>
                     <li>
                         Jornal Impresso todos os dias
@@ -230,7 +240,7 @@
                     </div>
                     <div>
                         <img src="./assets/img/stack.svg" alt="Acervo Digital">
-                        <p>Acervo digital desde 1960 para conhecer a história e relembrar grande momentos</p>
+                        <p>Acervo digital desde 1907 para conhecer a história e relembrar grande momentos</p>
                     </div>
                     <div>
                         <img src="./assets/img/plus.png" alt="Muito mais">
@@ -249,6 +259,23 @@
             </div>
         </section>
 
+        <section class="partners">
+            <h2>
+                +300 parceiros
+            </h2>
+            <span>As melhores marcas regionais e nacionais estão aqui.</span>
+
+            <div id="partners"></div>
+
+            <!-- <ul>
+                <li>+</li>
+                <li>eventos</li>
+                <li>teatro</li>
+                <li>show</li>
+                <li>sorteio</li>
+            </ul> -->
+        </section>
+
         <section class="video">
             <!-- <div id="player"></div> -->
         </section>
@@ -261,7 +288,7 @@
             <li><a href="https://edicaodigital.atribuna.com.br">Edição Digital</a></li>
         </ul>
         <div>
-            <p style="text-transform: uppercase;">A Tribuna de Santos Jornal e Editoria LTDA | CNPJ: 58.183.401/0001-04</p>
+            <p style="text-transform: uppercase;">A Tribuna de Santos Jornal e Editora LTDA | CNPJ: 58.183.401/0001-04</p>
             <p>Rua João Pessoa, 350 - Paquetá, Santos/SP - 11013-002</p>
             <p>
                 Central de Atendimento: <img src="./assets/img/whatsapp.svg" alt="Whatsapp"> (13)2102-7200 | atendimento@grupo-tribuna.com <br/>

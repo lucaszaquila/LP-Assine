@@ -17,6 +17,7 @@
     grid-area: title;
     font-size: 3rem;
     font-weight: 500;
+    text-align: center;
 }
 
 .sign h1 span {
@@ -223,6 +224,7 @@
 }
 
 .sale .card {
+    height: 100%;
     width: 100%;
     min-width: 300px;
     max-width: 450px;
@@ -350,6 +352,7 @@
     background-image: url('../img/map.png');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 
     display: grid;
     grid-template-columns: 70% 30%;
@@ -425,6 +428,46 @@
     line-height: 4.5rem;
 }
 
+.partners {
+    background-color: var(--pink-500);
+    color: var(--white);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.partners h2 {
+    font-size: 5rem;
+    font-weight: 900;
+}
+
+.partners span {
+    font-size: 1.5rem;
+}
+
+.partners > div {
+    margin-top: 3rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0 1rem;
+}
+
+.partners img {
+    width: 10%;
+}
+
+/* .partners ul {
+    font-size: 2rem;
+    font-weight: 900;
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+} */
+
 .video {
     width: 100%;
 }
@@ -433,4 +476,64 @@
     width: 100%;
     height: 100%;
     aspect-ratio: 16 / 9;
+}
+
+@media screen and (max-width: 1080px) {
+    .sign {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 1fr 1fr;
+        grid-template-areas:
+            "title"
+            "card1"
+            "card2";
+            gap: 2rem;
+    }
+
+    .sign .container,
+    .sign .container:last-child {
+        justify-self: center;
+    }
+
+    .sale {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .benefits .side:last-child {
+        order: -1;
+    }
+
+    .benefits,
+    .club {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .club div {
+        order: -2;
+        grid-column: 1;
+
+        width: 300px;
+        border-radius: 999px;
+        transformation: scale(0.9);
+        justify-self: center;
+
+        position: static;
+    }
+
+    .club span {
+        order: -1;
+        justify-self: center;
+
+        transformation: scale(0.9);
+
+        position: static;
+    }
+}
+
+@media (max-width: 720px) {
+    .club img {
+        justify-self: center;
+    }
 }

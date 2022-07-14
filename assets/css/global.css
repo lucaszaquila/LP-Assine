@@ -162,4 +162,16 @@ footer > div {
     html {
         font-size: 87.5%;
     }
+
+    footer {
+        grid-template-columns: 1fr;
+    }
+
+    footer ul {
+        text-align: center;
+    }
+
+    footer > div {
+        text-align: left;
+    }
 }
