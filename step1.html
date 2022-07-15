@@ -49,17 +49,22 @@
         <form action="">
             <h2>Pré-Cadastro</h2>
 
+            <div class="field line" style="--number:2">
+                <label for="cpf">Cupom</label> <span></span>
+                <input type="text" name="cpf" id="cpf">
+            </div>
+
             <div class="field">
                 <label for="cpf">CPF</label> <span>(apenas números)</span>
                 <input type="text" name="cpf" id="cpf" data-js="cpf">
             </div>
 
             <div class="field">
-                <label for="birth">Data de nascimento</label>
+                <label for="birth">Data de nascimento</label> <span>(dd/mm/aaaa)</span>
                 <input type="text" name="birth" id="birth" data-js="birth">
             </div>
 
-            <div class="field" style="grid-area: 3 / 1 / 3 / -1;">
+            <div class="field line" style="--number:4">
                 <label for="name">Nome</label>
                 <input type="text" name="name" id="name">
             </div>
@@ -81,11 +86,26 @@
                 <span>Para uma senha forte, escolha pelo menos uma letra e evite números sequenciais</span>
             </div>
 
-            <button style="grid-area: 5 / 2 / 5 / -1;">
+            <button class="line" style="--number:7">
                 Continuar
             </button>
         </form>
     </main>
     
+    <footer>
+        <ul>
+            <li><a href="https://www.atribuna.com.br">Portal A Tribuna</a></li>
+            <li><a href="https://clube.atribuna.com.br">Clube A Tribuna</a></li>
+            <li><a href="https://edicaodigital.atribuna.com.br">Edição Digital</a></li>
+        </ul>
+        <div>
+            <p style="text-transform: uppercase;">A Tribuna de Santos Jornal e Editora LTDA | CNPJ: 58.183.401/0001-04</p>
+            <p>Rua João Pessoa, 350 - Paquetá, Santos/SP - 11013-002</p>
+            <p>
+                Central de Atendimento: <img src="./assets/img/whatsapp.svg" alt="Whatsapp"> (13)2102-7200 | atendimento@grupo-tribuna.com <br/>
+                De segunda a sexta, das 7h às 18h | Aos sábados, domingos e feriados das 7h às 12h
+            </p>
+        </div>
+    </footer>
 </body>
 </html>

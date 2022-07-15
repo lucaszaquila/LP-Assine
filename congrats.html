@@ -27,7 +27,7 @@
         </a>
     </nav>
 
-    <main style="justify-content: center; gap: 1rem;">
+    <main style="justify-content: center; gap: 2rem 1rem;">
         <header>
             <span style="letter-spacing: normal; font-size: 1.5rem; font-weight: 500;">Parabéns! Agora você é</span>
             <h1 data-confetti>Assinante A Tribuna</h1>
@@ -43,12 +43,31 @@
             <span>Central do Assinante</span>
         </div>
     </main>
+
+    <footer>
+        <ul>
+            <li><a href="https://www.atribuna.com.br">Portal A Tribuna</a></li>
+            <li><a href="https://clube.atribuna.com.br">Clube A Tribuna</a></li>
+            <li><a href="https://edicaodigital.atribuna.com.br">Edição Digital</a></li>
+        </ul>
+        <div>
+            <p style="text-transform: uppercase;">A Tribuna de Santos Jornal e Editora LTDA | CNPJ: 58.183.401/0001-04</p>
+            <p>Rua João Pessoa, 350 - Paquetá, Santos/SP - 11013-002</p>
+            <p>
+                Central de Atendimento: <img src="./assets/img/whatsapp.svg" alt="Whatsapp"> (13)2102-7200 | atendimento@grupo-tribuna.com <br/>
+                De segunda a sexta, das 7h às 18h | Aos sábados, domingos e feriados das 7h às 12h
+            </p>
+        </div>
+    </footer>
+
     <div data-confetti class="confetti" style="right: 0;"></div>
     <div data-confetti class="confetti" style="left: 0;"></div>
     <script>
-        const confetti = document.querySelectorAll('[data-confetti]');
-        confetti.forEach((element) => {
-            party.confetti(element);
+        document.addEventListener('DOMContentLoaded', function(){
+            const confetti = document.querySelectorAll('[data-confetti]');
+            confetti.forEach((element) => {
+                party.confetti(element);
+            })
         })
     </script>
 </body>

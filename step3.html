@@ -49,7 +49,7 @@
     <form action="">
         <h2>Finalize seu cadastro</h2>
 
-        <div class="container address" style="grid-area: 2 / 1 / 2 / -1;">
+        <div class="container address line" style="--number:2">
             <div class="field">
                 <label for="cep">CEP</label>
                 <input type="text" name="cep" id="cep" data-js="cep" >
@@ -758,14 +758,29 @@
                 <option value="3557006">Votorantim</option>
                 <option value="3557105">Votuporanga</option>
                 <option value="3557154">Zacarias</option>
-</select>
             </select>
         </div>
 
-        <button style="grid-area: 5 / 2 / 5 / -1;">
+        <button class="line" style="--number:5">
             Finalizar
         </button>
     </form>
 </main>
+
+<footer>
+    <ul>
+        <li><a href="https://www.atribuna.com.br">Portal A Tribuna</a></li>
+        <li><a href="https://clube.atribuna.com.br">Clube A Tribuna</a></li>
+        <li><a href="https://edicaodigital.atribuna.com.br">Edição Digital</a></li>
+    </ul>
+    <div>
+        <p style="text-transform: uppercase;">A Tribuna de Santos Jornal e Editora LTDA | CNPJ: 58.183.401/0001-04</p>
+        <p>Rua João Pessoa, 350 - Paquetá, Santos/SP - 11013-002</p>
+        <p>
+            Central de Atendimento: <img src="./assets/img/whatsapp.svg" alt="Whatsapp"> (13)2102-7200 | atendimento@grupo-tribuna.com <br/>
+            De segunda a sexta, das 7h às 18h | Aos sábados, domingos e feriados das 7h às 12h
+        </p>
+    </div>
+</footer>
 </body>
 </html>

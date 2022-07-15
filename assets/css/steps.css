@@ -1,3 +1,7 @@
+:root {
+    --number: 1;
+}
+
 nav {
     background-color: var(--blue-700);
     color: var(--white)
@@ -8,10 +12,10 @@ nav a img{
 }
 
 main {
+    min-height: calc(100vh - 200px);
     padding: 2rem;
 
     display: grid;
-    grid-template-rows: 100px 1fr;
     gap: 2rem;
 }
 
@@ -25,6 +29,8 @@ header, form {
 }
 
 header {
+    text-align: center;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,6 +69,29 @@ form {
     gap: 1rem;
 }
 
+form div[data-payment="credit"],
+form div[data-payment="debit"],
+form div[data-payment="ticket"],
+form div[data-payment="pix"],
+form div[data-payment="address"],
+form div[data-payment="address-flex"],
+form div[data-payment="debit-flex"] {
+    display: none;
+}
+
+form.credit div[data-payment="credit"],
+form.debit div[data-payment="debit"],
+form.ticket div[data-payment="ticket"],
+form.pix div[data-payment="pix"],
+form.address div[data-payment="address"] {
+    display: block;
+}
+
+form.address div[data-payment="address-flex"],
+form.debit div[data-payment="debit-flex"] {
+    display: flex;
+}
+
 form .field {
     position: relative;
 }
@@ -86,7 +115,8 @@ form .field span {
     font-size: 0.8rem;
 }
 
-form .field img {
+form .field img#togglePassword {
+    display: block;
     width: 1rem;
     cursor: pointer;
     filter: invert(27%) sepia(0%) saturate(1637%) hue-rotate(170deg) brightness(102%) contrast(75%);
@@ -94,6 +124,10 @@ form .field img {
     position: absolute;
     top: 2.3rem;
     right: 13px;
+}
+
+form .field img {
+    display: none;
 }
 
 form .container {
@@ -105,6 +139,7 @@ form .container {
 form .container img {
     width: fit-content;
     height: fit-content;
+    transform: scale(0.7) translate(-20%, 45%)
 }
 
 form .container.address .field{
@@ -126,7 +161,7 @@ form button {
 }
 
 form h2 {
-    grid-area: 1 / 1 / 1 / 2 span;
+    grid-area: 1 / 1 / 1 / -1;
 }
 
 form input[type="radio"],
@@ -134,7 +169,68 @@ form input[type="checkbox"] {
     width: fit-content;
 }
 
+form div[data-payment="debit"] {
+    display: none;
+}
+
+form .line {
+    grid-area: var(--number) / 1 / var(--number) / -1;
+}
+
 .confetti {
     position: absolute;
     top: 50vh;
+}
+ 
+@media screen and (max-width: 768px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    form .line {
+        grid-area: auto;
+    }
+
+    header > div hr {
+        width: 100px;
+    }
+
+    form button {
+        width: auto;
+    }
+
+    form .container {
+        flex-direction: column;
+    }
+
+    form .container#flags {
+        display: none;
+     }
+
+    form .field img {
+        display: block;
+    }
+}
+
+form .field .bank img { 
+    display: block;
+    height: 60px;
+
+    transition: filter 0.3s ease-in-out;
+}
+
+form .field .bank input { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+form .field .bank input + img {
+    cursor: pointer;
+    filter: brightness(1.2) saturate(0) opacity(0.8);
+}
+  
+form .field .bank input:checked + img {
+    filter: none;
 }
