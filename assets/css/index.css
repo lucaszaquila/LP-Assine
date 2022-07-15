@@ -481,12 +481,12 @@
 @media screen and (max-width: 1080px) {
     .sign {
         grid-template-columns: 1fr;
-        grid-template-rows: 100px 1fr 1fr;
+        grid-template-rows: 1fr;
         grid-template-areas:
             "title"
             "card1"
             "card2";
-            gap: 2rem;
+        gap: 2rem;
     }
 
     .sign .container,
@@ -516,17 +516,17 @@
 
         width: 300px;
         border-radius: 999px;
-        transformation: scale(0.9);
+        transform: scale(0.9);
         justify-self: center;
 
         position: static;
     }
 
-    .club span {
+    .club > span {
         order: -1;
         justify-self: center;
 
-        transformation: scale(0.9);
+        transform: scale(0.9);
 
         position: static;
     }
@@ -535,5 +535,14 @@
 @media (max-width: 720px) {
     .club img {
         justify-self: center;
+    }
+
+    .sale .card,
+    .club div {
+        min-width: 0;
+    }
+
+    .partners h2 {
+        font-size: 4rem;
     }
 }

@@ -175,3 +175,13 @@ footer > div {
         text-align: left;
     }
 }
+
+@media (max-width: 400px) {
+    nav img {
+        max-width: 150px;
+    }
+
+    .wpp-container {
+        transform: scale(0.9);
+    }
+}
