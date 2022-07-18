@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assine A Tribuna | Finalize seu cadastro</title>
+    <title>Assine A Tribuna | Pagamento</title>
 
     <!-- Montserrat Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,770 +17,907 @@
 
     <!-- Scripts -->
     <script defer src="./assets/js/masks.js"></script>
+    <script defer src="./assets/js/payment.js"></script>
     <script defer src="./assets/js/address.js"></script>
 </head>
 <body>
-<nav>
-    <a href="#">
-        <img src="./assets/img/atribuna.svg" alt="A Tribuna">
-    </a>
+    <nav>
+        <a href="">
+            <img src="./assets/img/atribuna.svg" alt="A Tribuna">
+        </a>
 
-    <div class="wpp-container">
-        <img src="./assets/img/whatsapp.png" alt="Whatsapp">
-        <span>(13) 2102-7200</span>
-        <span>Central do Assinante</span>
-    </div>
-</nav>
+        <div class="wpp-container">
+            <img src="./assets/img/whatsapp.png" alt="Whatsapp">
+            <span>(13) 2102-7200</span>
+            <span>Central do Assinante</span>
+        </div>
+    </nav>
 
-<main>
-    <header>
-        <span>Você está assinando</span>
-        <h1>A Tribuna Digital Anual</h1>
+    <main>
+        <header>
+            <span>Você está assinando</span>
+            <h1>A Tribuna Digital Anual</h1>
 
+            <div>
+                <div style="background-color: var(--purple-500);"></div>
+                <hr style="border: 1px solid var(--black);">
+                <div style="background-color: var(--purple-500);"></div>
+                <hr>
+                <div></div>
+            </div>
+        </header>
+
+        <form action="./congrats.html" class="credit">
+            <h2>Pagamento</h2>
+
+            <div id="payment" class="container line" style="--number:2; flex-wrap: wrap; margin-bottom: 2rem;">
+                <div class="field">
+                    <input checked type="radio" value="credit" name="payment" id="credit">
+                    <label for="credit">Cartão de crédito</label>
+                </div>
+
+                <div class="field">
+                    <input type="radio" value="debit" name="payment" id="debit">
+                    <label for="debit">Débito em conta</label>
+                </div>
+
+                <div class="field">
+                    <input type="radio" value="ticket" name="payment" id="ticket">
+                    <label for="ticket">Boleto</label>
+                </div>
+
+                <div class="field">
+                    <input type="radio" value="pix" name="payment" id="pix">
+                    <label for="pix">Pix</label>
+                </div>
+            </div>
+
+            <!-- Credit -->
+            <div class="field" data-payment="credit">
+                <label for="card">Nº do cartão</label> 
+                <input type="number" name="card" id="card" data-js="card"  inputmode="numeric">
+                <img src="./assets/img/cartoes.png" alt="Card flags" style="width: 40%; margin-top: 0.5rem;">
+            </div>
+
+            <div class="container" id="flags" data-payment="credit">
+                <img src="./assets/img/cartoes.png" alt="Card flags">
+            </div>
+
+            <div class="field" data-payment="credit">
+                <label for="name">Nome do Títular</label>
+                <input type="text" name="name" id="name">
+            </div>
+
+            <div class="field" data-payment="credit">
+                <label for="validity">Validade </label> <span>(mm/aa)</span>
+                <input type="text" name="validity" id="validity" data-js="date"  inputmode="numeric">
+            </div>
+
+            <div class="field" data-payment="credit">
+                <label for="code">Código de segurança</label>
+                <input type="number" name="code" id="code"  inputmode="numeric">
+            </div>
+
+            <!-- Debit -->
+            <div class="line" style="--number:3; font-weight: 600;" data-payment="debit">
+                Escolha seu banco:
+            </div>
+            
+            <div class="field line" style="--number:4; gap: 1rem; margin-bottom: 1rem;" data-payment="debit-flex">
+                <label class="bank">
+                    <input type="radio" name="bank" value="bradesco" checked>
+                    <img src="./assets/img/bradesco.svg" alt="Bradesco">
+                </label>
+                  
+                <label class="bank">
+                    <input type="radio" name="bank" value="brasil">
+                    <img src="./assets/img/brasil.svg" alt="Banco do Brasil">
+                </label>
+
+                <label class="bank">
+                    <input type="radio" name="bank" value="itau">
+                    <img src="./assets/img/itau.svg" alt="Itau">
+                </label>
+
+                <label class="bank">
+                    <input type="radio" name="bank" value="santander">
+                    <img src="./assets/img/santander.svg" alt="Santander">
+                </label>
+            </div>
+
+            <div class="field line" style="--number:5" data-payment="debit">
+                <label for="holder">Titular:</label>
+                <input type="text" name="holder" id="holder">
+            </div>
+
+            <div class="field" data-payment="debit">
+                <label for="agency">Agência:</label>
+                <input type="text" name="agency" id="agency">
+            </div>
+
+            <div class="field" data-payment="debit">
+                <label for="agency_digit">Dígito:</label>
+                <input type="text" name="agency_digit" id="agency_digit">
+            </div>
+
+            <div class="field" data-payment="debit">
+                <label for="account">Conta:</label>
+                <input type="text" name="account" id="account">
+            </div>
+
+            <div class="field" data-payment="debit">
+                <label for="account_digit">Dígito:</label>
+                <input type="text" name="account_digit" id="account_digit">
+            </div>
+
+            <div class="field line" style="--number:8" data-payment="debit">
+                <p style="color: var(--gray-500); font-weight: normal;">
+                    <span style="font-weight: 700;">LEIA COM ATENÇÃO:</span>
+                     após a finalização do pedido de assinatura, você precisará autorizar "A Tribuna" a realizar o 
+                    débito na sua conta em um prazo de até 72 horas. Você pode autorizar pelo aplicativo no seu celular, pelo site, 
+                    nos caixas eletrônicos ou agências. 
+                </p>
+            </div>
+
+            <!-- Ticket -->
+            <div class="line" style="--number:3; font-weight: 600;" data-payment="address">
+                Cadastre o endereço de cobrança:
+            </div>
+
+            <div class="container address line" style="--number:4" data-payment="address-flex">
+                <div class="field">
+                    <label for="cep">CEP</label>
+                    <input type="text" name="cep" id="cep" data-js="cep"  inputmode="numeric">
+                </div>
+
+                <div class="field">
+                    <label for="address">Endereço</label>
+                    <input type="text" name="address" id="address" data-field="logradouro" data-reset="true">
+                </div>
+
+                <div class="field">
+                    <label for="number">Nº</label>
+                    <input type="text" name="number" id="number" data-reset="true">
+                </div>
+            </div>
+
+            <div class="field" data-payment="address">
+                <label for="complement">Complemento</label>
+                <input type="text" name="complement" id="complement" data-field="complemento" data-reset="true">
+            </div>
+
+            <div class="field" data-payment="address">
+                <label for="district">Bairro</label>
+                <input type="text" name="district" id="district" data-field="bairro" data-reset="true">
+            </div>
+
+            <div class="field" data-payment="address">
+                <label for="state">Estado</label>
+                <select name="state" id="state" data-field="uf" data-reset="true">
+                    <option value="" default selected disabled hidden></option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+            </div>
+
+            <div class="field" data-payment="address">
+                <label for="city">Cidade</label>
+                <select name="city" id="city" data-field="ibge" data-reset="true">
+                    <option value="" default selected disabled hidden></option>
+                    <option value="3500105">Adamantina</option>
+                    <option value="3500204">Adolfo</option>
+                    <option value="3500303">Aguaí</option>
+                    <option value="3500402">Águas da Prata</option>
+                    <option value="3500501">Águas de Lindóia</option>
+                    <option value="3500550">Águas de Santa Bárbara</option>
+                    <option value="3500600">Águas de São Pedro</option>
+                    <option value="3500709">Agudos</option>
+                    <option value="3500758">Alambari</option>
+                    <option value="3500808">Alfredo Marcondes</option>
+                    <option value="3500907">Altair</option>
+                    <option value="3501004">Altinópolis</option>
+                    <option value="3501103">Alto Alegre</option>
+                    <option value="3501152">Alumínio</option>
+                    <option value="3501202">Álvares Florence</option>
+                    <option value="3501301">Álvares Machado</option>
+                    <option value="3501400">Álvaro de Carvalho</option>
+                    <option value="3501509">Alvinlândia</option>
+                    <option value="3501608">Americana</option>
+                    <option value="3501707">Américo Brasiliense</option>
+                    <option value="3501806">Américo de Campos</option>
+                    <option value="3501905">Amparo</option>
+                    <option value="3502002">Analândia</option>
+                    <option value="3502101">Andradina</option>
+                    <option value="3502200">Angatuba</option>
+                    <option value="3502309">Anhembi</option>
+                    <option value="3502408">Anhumas</option>
+                    <option value="3502507">Aparecida</option>
+                    <option value="3502606">Aparecida d'Oeste</option>
+                    <option value="3502705">Apiaí</option>
+                    <option value="3502754">Araçariguama</option>
+                    <option value="3502804">Araçatuba</option>
+                    <option value="3502903">Araçoiaba da Serra</option>
+                    <option value="3503000">Aramina</option>
+                    <option value="3503109">Arandu</option>
+                    <option value="3503158">Arapeí</option>
+                    <option value="3503208">Araraquara</option>
+                    <option value="3503307">Araras</option>
+                    <option value="3503356">Arco-Íris</option>
+                    <option value="3503406">Arealva</option>
+                    <option value="3503505">Areias</option>
+                    <option value="3503604">Areiópolis</option>
+                    <option value="3503703">Ariranha</option>
+                    <option value="3503802">Artur Nogueira</option>
+                    <option value="3503901">Arujá</option>
+                    <option value="3503950">Aspásia</option>
+                    <option value="3504008">Assis</option>
+                    <option value="3504107">Atibaia</option>
+                    <option value="3504206">Auriflama</option>
+                    <option value="3504305">Avaí</option>
+                    <option value="3504404">Avanhandava</option>
+                    <option value="3504503">Avaré</option>
+                    <option value="3504602">Bady Bassitt</option>
+                    <option value="3504701">Balbinos</option>
+                    <option value="3504800">Bálsamo</option>
+                    <option value="3504909">Bananal</option>
+                    <option value="3505005">Barão de Antonina</option>
+                    <option value="3505104">Barbosa</option>
+                    <option value="3505203">Bariri</option>
+                    <option value="3505302">Barra Bonita</option>
+                    <option value="3505351">Barra do Chapéu</option>
+                    <option value="3505401">Barra do Turvo</option>
+                    <option value="3505500">Barretos</option>
+                    <option value="3505609">Barrinha</option>
+                    <option value="3505708">Barueri</option>
+                    <option value="3505807">Bastos</option>
+                    <option value="3505906">Batatais</option>
+                    <option value="3506003">Bauru</option>
+                    <option value="3506102">Bebedouro</option>
+                    <option value="3506201">Bento de Abreu</option>
+                    <option value="3506300">Bernardino de Campos</option>
+                    <option value="3506359">Bertioga</option>
+                    <option value="3506409">Bilac</option>
+                    <option value="3506508">Birigui</option>
+                    <option value="3506607">Biritiba Mirim</option>
+                    <option value="3506706">Boa Esperança do Sul</option>
+                    <option value="3506805">Bocaina</option>
+                    <option value="3506904">Bofete</option>
+                    <option value="3507001">Boituva</option>
+                    <option value="3507100">Bom Jesus dos Perdões</option>
+                    <option value="3507159">Bom Sucesso de Itararé</option>
+                    <option value="3507209">Borá</option>
+                    <option value="3507308">Boracéia</option>
+                    <option value="3507407">Borborema</option>
+                    <option value="3507456">Borebi</option>
+                    <option value="3507506">Botucatu</option>
+                    <option value="3507605">Bragança Paulista</option>
+                    <option value="3507704">Braúna</option>
+                    <option value="3507753">Brejo Alegre</option>
+                    <option value="3507803">Brodowski</option>
+                    <option value="3507902">Brotas</option>
+                    <option value="3508009">Buri</option>
+                    <option value="3508108">Buritama</option>
+                    <option value="3508207">Buritizal</option>
+                    <option value="3508306">Cabrália Paulista</option>
+                    <option value="3508405">Cabreúva</option>
+                    <option value="3508504">Caçapava</option>
+                    <option value="3508603">Cachoeira Paulista</option>
+                    <option value="3508702">Caconde</option>
+                    <option value="3508801">Cafelândia</option>
+                    <option value="3508900">Caiabu</option>
+                    <option value="3509007">Caieiras</option>
+                    <option value="3509106">Caiuá</option>
+                    <option value="3509205">Cajamar</option>
+                    <option value="3509254">Cajati</option>
+                    <option value="3509304">Cajobi</option>
+                    <option value="3509403">Cajuru</option>
+                    <option value="3509452">Campina do Monte Alegre</option>
+                    <option value="3509502">Campinas</option>
+                    <option value="3509601">Campo Limpo Paulista</option>
+                    <option value="3509700">Campos do Jordão</option>
+                    <option value="3509809">Campos Novos Paulista</option>
+                    <option value="3509908">Cananéia</option>
+                    <option value="3509957">Canas</option>
+                    <option value="3510005">Cândido Mota</option>
+                    <option value="3510104">Cândido Rodrigues</option>
+                    <option value="3510153">Canitar</option>
+                    <option value="3510203">Capão Bonito</option>
+                    <option value="3510302">Capela do Alto</option>
+                    <option value="3510401">Capivari</option>
+                    <option value="3510500">Caraguatatuba</option>
+                    <option value="3510609">Carapicuíba</option>
+                    <option value="3510708">Cardoso</option>
+                    <option value="3510807">Casa Branca</option>
+                    <option value="3510906">Cássia dos Coqueiros</option>
+                    <option value="3511003">Castilho</option>
+                    <option value="3511102">Catanduva</option>
+                    <option value="3511201">Catiguá</option>
+                    <option value="3511300">Cedral</option>
+                    <option value="3511409">Cerqueira César</option>
+                    <option value="3511508">Cerquilho</option>
+                    <option value="3511607">Cesário Lange</option>
+                    <option value="3511706">Charqueada</option>
+                    <option value="3557204">Chavantes</option>
+                    <option value="3511904">Clementina</option>
+                    <option value="3512001">Colina</option>
+                    <option value="3512100">Colômbia</option>
+                    <option value="3512209">Conchal</option>
+                    <option value="3512308">Conchas</option>
+                    <option value="3512407">Cordeirópolis</option>
+                    <option value="3512506">Coroados</option>
+                    <option value="3512605">Coronel Macedo</option>
+                    <option value="3512704">Corumbataí</option>
+                    <option value="3512803">Cosmópolis</option>
+                    <option value="3512902">Cosmorama</option>
+                    <option value="3513009">Cotia</option>
+                    <option value="3513108">Cravinhos</option>
+                    <option value="3513207">Cristais Paulista</option>
+                    <option value="3513306">Cruzália</option>
+                    <option value="3513405">Cruzeiro</option>
+                    <option value="3513504">Cubatão</option>
+                    <option value="3513603">Cunha</option>
+                    <option value="3513702">Descalvado</option>
+                    <option value="3513801">Diadema</option>
+                    <option value="3513850">Dirce Reis</option>
+                    <option value="3513900">Divinolândia</option>
+                    <option value="3514007">Dobrada</option>
+                    <option value="3514106">Dois Córregos</option>
+                    <option value="3514205">Dolcinópolis</option>
+                    <option value="3514304">Dourado</option>
+                    <option value="3514403">Dracena</option>
+                    <option value="3514502">Duartina</option>
+                    <option value="3514601">Dumont</option>
+                    <option value="3514700">Echaporã</option>
+                    <option value="3514809">Eldorado</option>
+                    <option value="3514908">Elias Fausto</option>
+                    <option value="3514924">Elisiário</option>
+                    <option value="3514957">Embaúba</option>
+                    <option value="3515004">Embu das Artes</option>
+                    <option value="3515103">Embu-Guaçu</option>
+                    <option value="3515129">Emilianópolis</option>
+                    <option value="3515152">Engenheiro Coelho</option>
+                    <option value="3515186">Espírito Santo do Pinhal</option>
+                    <option value="3515194">Espírito Santo do Turvo</option>
+                    <option value="3557303">Estiva Gerbi</option>
+                    <option value="3515301">Estrela do Norte</option>
+                    <option value="3515202">Estrela d'Oeste</option>
+                    <option value="3515350">Euclides da Cunha Paulista</option>
+                    <option value="3515400">Fartura</option>
+                    <option value="3515608">Fernando Prestes</option>
+                    <option value="3515509">Fernandópolis</option>
+                    <option value="3515657">Fernão</option>
+                    <option value="3515707">Ferraz de Vasconcelos</option>
+                    <option value="3515806">Flora Rica</option>
+                    <option value="3515905">Floreal</option>
+                    <option value="3516002">Flórida Paulista</option>
+                    <option value="3516101">Florínea</option>
+                    <option value="3516200">Franca</option>
+                    <option value="3516309">Francisco Morato</option>
+                    <option value="3516408">Franco da Rocha</option>
+                    <option value="3516507">Gabriel Monteiro</option>
+                    <option value="3516606">Gália</option>
+                    <option value="3516705">Garça</option>
+                    <option value="3516804">Gastão Vidigal</option>
+                    <option value="3516853">Gavião Peixoto</option>
+                    <option value="3516903">General Salgado</option>
+                    <option value="3517000">Getulina</option>
+                    <option value="3517109">Glicério</option>
+                    <option value="3517208">Guaiçara</option>
+                    <option value="3517307">Guaimbê</option>
+                    <option value="3517406">Guaíra</option>
+                    <option value="3517505">Guapiaçu</option>
+                    <option value="3517604">Guapiara</option>
+                    <option value="3517703">Guará</option>
+                    <option value="3517802">Guaraçaí</option>
+                    <option value="3517901">Guaraci</option>
+                    <option value="3518008">Guarani d'Oeste</option>
+                    <option value="3518107">Guarantã</option>
+                    <option value="3518206">Guararapes</option>
+                    <option value="3518305">Guararema</option>
+                    <option value="3518404">Guaratinguetá</option>
+                    <option value="3518503">Guareí</option>
+                    <option value="3518602">Guariba</option>
+                    <option value="3518701">Guarujá</option>
+                    <option value="3518800">Guarulhos</option>
+                    <option value="3518859">Guatapará</option>
+                    <option value="3518909">Guzolândia</option>
+                    <option value="3519006">Herculândia</option>
+                    <option value="3519055">Holambra</option>
+                    <option value="3519071">Hortolândia</option>
+                    <option value="3519105">Iacanga</option>
+                    <option value="3519204">Iacri</option>
+                    <option value="3519253">Iaras</option>
+                    <option value="3519303">Ibaté</option>
+                    <option value="3519402">Ibirá</option>
+                    <option value="3519501">Ibirarema</option>
+                    <option value="3519600">Ibitinga</option>
+                    <option value="3519709">Ibiúna</option>
+                    <option value="3519808">Icém</option>
+                    <option value="3519907">Iepê</option>
+                    <option value="3520004">Igaraçu do Tietê</option>
+                    <option value="3520103">Igarapava</option>
+                    <option value="3520202">Igaratá</option>
+                    <option value="3520301">Iguape</option>
+                    <option value="3520426">Ilha Comprida</option>
+                    <option value="3520442">Ilha Solteira</option>
+                    <option value="3520400">Ilhabela</option>
+                    <option value="3520509">Indaiatuba</option>
+                    <option value="3520608">Indiana</option>
+                    <option value="3520707">Indiaporã</option>
+                    <option value="3520806">Inúbia Paulista</option>
+                    <option value="3520905">Ipaussu</option>
+                    <option value="3521002">Iperó</option>
+                    <option value="3521101">Ipeúna</option>
+                    <option value="3521150">Ipiguá</option>
+                    <option value="3521200">Iporanga</option>
+                    <option value="3521309">Ipuã</option>
+                    <option value="3521408">Iracemápolis</option>
+                    <option value="3521507">Irapuã</option>
+                    <option value="3521606">Irapuru</option>
+                    <option value="3521705">Itaberá</option>
+                    <option value="3521804">Itaí</option>
+                    <option value="3521903">Itajobi</option>
+                    <option value="3522000">Itaju</option>
+                    <option value="3522109">Itanhaém</option>
+                    <option value="3522158">Itaoca</option>
+                    <option value="3522208">Itapecerica da Serra</option>
+                    <option value="3522307">Itapetininga</option>
+                    <option value="3522406">Itapeva</option>
+                    <option value="3522505">Itapevi</option>
+                    <option value="3522604">Itapira</option>
+                    <option value="3522653">Itapirapuã Paulista</option>
+                    <option value="3522703">Itápolis</option>
+                    <option value="3522802">Itaporanga</option>
+                    <option value="3522901">Itapuí</option>
+                    <option value="3523008">Itapura</option>
+                    <option value="3523107">Itaquaquecetuba</option>
+                    <option value="3523206">Itararé</option>
+                    <option value="3523305">Itariri</option>
+                    <option value="3523404">Itatiba</option>
+                    <option value="3523503">Itatinga</option>
+                    <option value="3523602">Itirapina</option>
+                    <option value="3523701">Itirapuã</option>
+                    <option value="3523800">Itobi</option>
+                    <option value="3523909">Itu</option>
+                    <option value="3524006">Itupeva</option>
+                    <option value="3524105">Ituverava</option>
+                    <option value="3524204">Jaborandi</option>
+                    <option value="3524303">Jaboticabal</option>
+                    <option value="3524402">Jacareí</option>
+                    <option value="3524501">Jaci</option>
+                    <option value="3524600">Jacupiranga</option>
+                    <option value="3524709">Jaguariúna</option>
+                    <option value="3524808">Jales</option>
+                    <option value="3524907">Jambeiro</option>
+                    <option value="3525003">Jandira</option>
+                    <option value="3525102">Jardinópolis</option>
+                    <option value="3525201">Jarinu</option>
+                    <option value="3525300">Jaú</option>
+                    <option value="3525409">Jeriquara</option>
+                    <option value="3525508">Joanópolis</option>
+                    <option value="3525607">João Ramalho</option>
+                    <option value="3525706">José Bonifácio</option>
+                    <option value="3525805">Júlio Mesquita</option>
+                    <option value="3525854">Jumirim</option>
+                    <option value="3525904">Jundiaí</option>
+                    <option value="3526001">Junqueirópolis</option>
+                    <option value="3526100">Juquiá</option>
+                    <option value="3526209">Juquitiba</option>
+                    <option value="3526308">Lagoinha</option>
+                    <option value="3526407">Laranjal Paulista</option>
+                    <option value="3526506">Lavínia</option>
+                    <option value="3526605">Lavrinhas</option>
+                    <option value="3526704">Leme</option>
+                    <option value="3526803">Lençóis Paulista</option>
+                    <option value="3526902">Limeira</option>
+                    <option value="3527009">Lindóia</option>
+                    <option value="3527108">Lins</option>
+                    <option value="3527207">Lorena</option>
+                    <option value="3527256">Lourdes</option>
+                    <option value="3527306">Louveira</option>
+                    <option value="3527405">Lucélia</option>
+                    <option value="3527504">Lucianópolis</option>
+                    <option value="3527603">Luís Antônio</option>
+                    <option value="3527702">Luiziânia</option>
+                    <option value="3527801">Lupércio</option>
+                    <option value="3527900">Lutécia</option>
+                    <option value="3528007">Macatuba</option>
+                    <option value="3528106">Macaubal</option>
+                    <option value="3528205">Macedônia</option>
+                    <option value="3528304">Magda</option>
+                    <option value="3528403">Mairinque</option>
+                    <option value="3528502">Mairiporã</option>
+                    <option value="3528601">Manduri</option>
+                    <option value="3528700">Marabá Paulista</option>
+                    <option value="3528809">Maracaí</option>
+                    <option value="3528858">Marapoama</option>
+                    <option value="3528908">Mariápolis</option>
+                    <option value="3529005">Marília</option>
+                    <option value="3529104">Marinópolis</option>
+                    <option value="3529203">Martinópolis</option>
+                    <option value="3529302">Matão</option>
+                    <option value="3529401">Mauá</option>
+                    <option value="3529500">Mendonça</option>
+                    <option value="3529609">Meridiano</option>
+                    <option value="3529658">Mesópolis</option>
+                    <option value="3529708">Miguelópolis</option>
+                    <option value="3529807">Mineiros do Tietê</option>
+                    <option value="3530003">Mira Estrela</option>
+                    <option value="3529906">Miracatu</option>
+                    <option value="3530102">Mirandópolis</option>
+                    <option value="3530201">Mirante do Paranapanema</option>
+                    <option value="3530300">Mirassol</option>
+                    <option value="3530409">Mirassolândia</option>
+                    <option value="3530508">Mococa</option>
+                    <option value="3530607">Mogi das Cruzes</option>
+                    <option value="3530706">Mogi Guaçu</option>
+                    <option value="3530805">Mogi Mirim</option>
+                    <option value="3530904">Mombuca</option>
+                    <option value="3531001">Monções</option>
+                    <option value="3531100">Mongaguá</option>
+                    <option value="3531209">Monte Alegre do Sul</option>
+                    <option value="3531308">Monte Alto</option>
+                    <option value="3531407">Monte Aprazível</option>
+                    <option value="3531506">Monte Azul Paulista</option>
+                    <option value="3531605">Monte Castelo</option>
+                    <option value="3531803">Monte Mor</option>
+                    <option value="3531704">Monteiro Lobato</option>
+                    <option value="3531902">Morro Agudo</option>
+                    <option value="3532009">Morungaba</option>
+                    <option value="3532058">Motuca</option>
+                    <option value="3532108">Murutinga do Sul</option>
+                    <option value="3532157">Nantes</option>
+                    <option value="3532207">Narandiba</option>
+                    <option value="3532306">Natividade da Serra</option>
+                    <option value="3532405">Nazaré Paulista</option>
+                    <option value="3532504">Neves Paulista</option>
+                    <option value="3532603">Nhandeara</option>
+                    <option value="3532702">Nipoã</option>
+                    <option value="3532801">Nova Aliança</option>
+                    <option value="3532827">Nova Campina</option>
+                    <option value="3532843">Nova Canaã Paulista</option>
+                    <option value="3532868">Nova Castilho</option>
+                    <option value="3532900">Nova Europa</option>
+                    <option value="3533007">Nova Granada</option>
+                    <option value="3533106">Nova Guataporanga</option>
+                    <option value="3533205">Nova Independência</option>
+                    <option value="3533304">Nova Luzitânia</option>
+                    <option value="3533403">Nova Odessa</option>
+                    <option value="3533254">Novais</option>
+                    <option value="3533502">Novo Horizonte</option>
+                    <option value="3533601">Nuporanga</option>
+                    <option value="3533700">Ocauçu</option>
+                    <option value="3533809">Óleo</option>
+                    <option value="3533908">Olímpia</option>
+                    <option value="3534005">Onda Verde</option>
+                    <option value="3534104">Oriente</option>
+                    <option value="3534203">Orindiúva</option>
+                    <option value="3534302">Orlândia</option>
+                    <option value="3534401">Osasco</option>
+                    <option value="3534500">Oscar Bressane</option>
+                    <option value="3534609">Osvaldo Cruz</option>
+                    <option value="3534708">Ourinhos</option>
+                    <option value="3534807">Ouro Verde</option>
+                    <option value="3534757">Ouroeste</option>
+                    <option value="3534906">Pacaembu</option>
+                    <option value="3535002">Palestina</option>
+                    <option value="3535101">Palmares Paulista</option>
+                    <option value="3535200">Palmeira d'Oeste</option>
+                    <option value="3535309">Palmital</option>
+                    <option value="3535408">Panorama</option>
+                    <option value="3535507">Paraguaçu Paulista</option>
+                    <option value="3535606">Paraibuna</option>
+                    <option value="3535705">Paraíso</option>
+                    <option value="3535804">Paranapanema</option>
+                    <option value="3535903">Paranapuã</option>
+                    <option value="3536000">Parapuã</option>
+                    <option value="3536109">Pardinho</option>
+                    <option value="3536208">Pariquera-Açu</option>
+                    <option value="3536257">Parisi</option>
+                    <option value="3536307">Patrocínio Paulista</option>
+                    <option value="3536406">Paulicéia</option>
+                    <option value="3536505">Paulínia</option>
+                    <option value="3536570">Paulistânia</option>
+                    <option value="3536604">Paulo de Faria</option>
+                    <option value="3536703">Pederneiras</option>
+                    <option value="3536802">Pedra Bela</option>
+                    <option value="3536901">Pedranópolis</option>
+                    <option value="3537008">Pedregulho</option>
+                    <option value="3537107">Pedreira</option>
+                    <option value="3537156">Pedrinhas Paulista</option>
+                    <option value="3537206">Pedro de Toledo</option>
+                    <option value="3537305">Penápolis</option>
+                    <option value="3537404">Pereira Barreto</option>
+                    <option value="3537503">Pereiras</option>
+                    <option value="3537602">Peruíbe</option>
+                    <option value="3537701">Piacatu</option>
+                    <option value="3537800">Piedade</option>
+                    <option value="3537909">Pilar do Sul</option>
+                    <option value="3538006">Pindamonhangaba</option>
+                    <option value="3538105">Pindorama</option>
+                    <option value="3538204">Pinhalzinho</option>
+                    <option value="3538303">Piquerobi</option>
+                    <option value="3538501">Piquete</option>
+                    <option value="3538600">Piracaia</option>
+                    <option value="3538709">Piracicaba</option>
+                    <option value="3538808">Piraju</option>
+                    <option value="3538907">Pirajuí</option>
+                    <option value="3539004">Pirangi</option>
+                    <option value="3539103">Pirapora do Bom Jesus</option>
+                    <option value="3539202">Pirapozinho</option>
+                    <option value="3539301">Pirassununga</option>
+                    <option value="3539400">Piratininga</option>
+                    <option value="3539509">Pitangueiras</option>
+                    <option value="3539608">Planalto</option>
+                    <option value="3539707">Platina</option>
+                    <option value="3539806">Poá</option>
+                    <option value="3539905">Poloni</option>
+                    <option value="3540002">Pompéia</option>
+                    <option value="3540101">Pongaí</option>
+                    <option value="3540200">Pontal</option>
+                    <option value="3540259">Pontalinda</option>
+                    <option value="3540309">Pontes Gestal</option>
+                    <option value="3540408">Populina</option>
+                    <option value="3540507">Porangaba</option>
+                    <option value="3540606">Porto Feliz</option>
+                    <option value="3540705">Porto Ferreira</option>
+                    <option value="3540754">Potim</option>
+                    <option value="3540804">Potirendaba</option>
+                    <option value="3540853">Pracinha</option>
+                    <option value="3540903">Pradópolis</option>
+                    <option value="3541000">Praia Grande</option>
+                    <option value="3541059">Pratânia</option>
+                    <option value="3541109">Presidente Alves</option>
+                    <option value="3541208">Presidente Bernardes</option>
+                    <option value="3541307">Presidente Epitácio</option>
+                    <option value="3541406">Presidente Prudente</option>
+                    <option value="3541505">Presidente Venceslau</option>
+                    <option value="3541604">Promissão</option>
+                    <option value="3541653">Quadra</option>
+                    <option value="3541703">Quatá</option>
+                    <option value="3541802">Queiroz</option>
+                    <option value="3541901">Queluz</option>
+                    <option value="3542008">Quintana</option>
+                    <option value="3542107">Rafard</option>
+                    <option value="3542206">Rancharia</option>
+                    <option value="3542305">Redenção da Serra</option>
+                    <option value="3542404">Regente Feijó</option>
+                    <option value="3542503">Reginópolis</option>
+                    <option value="3542602">Registro</option>
+                    <option value="3542701">Restinga</option>
+                    <option value="3542800">Ribeira</option>
+                    <option value="3542909">Ribeirão Bonito</option>
+                    <option value="3543006">Ribeirão Branco</option>
+                    <option value="3543105">Ribeirão Corrente</option>
+                    <option value="3543204">Ribeirão do Sul</option>
+                    <option value="3543238">Ribeirão dos Índios</option>
+                    <option value="3543253">Ribeirão Grande</option>
+                    <option value="3543303">Ribeirão Pires</option>
+                    <option value="3543402">Ribeirão Preto</option>
+                    <option value="3543600">Rifaina</option>
+                    <option value="3543709">Rincão</option>
+                    <option value="3543808">Rinópolis</option>
+                    <option value="3543907">Rio Claro</option>
+                    <option value="3544004">Rio das Pedras</option>
+                    <option value="3544103">Rio Grande da Serra</option>
+                    <option value="3544202">Riolândia</option>
+                    <option value="3543501">Riversul</option>
+                    <option value="3544251">Rosana</option>
+                    <option value="3544301">Roseira</option>
+                    <option value="3544400">Rubiácea</option>
+                    <option value="3544509">Rubinéia</option>
+                    <option value="3544608">Sabino</option>
+                    <option value="3544707">Sagres</option>
+                    <option value="3544806">Sales</option>
+                    <option value="3544905">Sales Oliveira</option>
+                    <option value="3545001">Salesópolis</option>
+                    <option value="3545100">Salmourão</option>
+                    <option value="3545159">Saltinho</option>
+                    <option value="3545209">Salto</option>
+                    <option value="3545308">Salto de Pirapora</option>
+                    <option value="3545407">Salto Grande</option>
+                    <option value="3545506">Sandovalina</option>
+                    <option value="3545605">Santa Adélia</option>
+                    <option value="3545704">Santa Albertina</option>
+                    <option value="3545803">Santa Bárbara d'Oeste</option>
+                    <option value="3546009">Santa Branca</option>
+                    <option value="3546108">Santa Clara d'Oeste</option>
+                    <option value="3546207">Santa Cruz da Conceição</option>
+                    <option value="3546256">Santa Cruz da Esperança</option>
+                    <option value="3546306">Santa Cruz das Palmeiras</option>
+                    <option value="3546405">Santa Cruz do Rio Pardo</option>
+                    <option value="3546504">Santa Ernestina</option>
+                    <option value="3546603">Santa Fé do Sul</option>
+                    <option value="3546702">Santa Gertrudes</option>
+                    <option value="3546801">Santa Isabel</option>
+                    <option value="3546900">Santa Lúcia</option>
+                    <option value="3547007">Santa Maria da Serra</option>
+                    <option value="3547106">Santa Mercedes</option>
+                    <option value="3547502">Santa Rita do Passa Quatro</option>
+                    <option value="3547403">Santa Rita d'Oeste</option>
+                    <option value="3547601">Santa Rosa de Viterbo</option>
+                    <option value="3547650">Santa Salete</option>
+                    <option value="3547205">Santana da Ponte Pensa</option>
+                    <option value="3547304">Santana de Parnaíba</option>
+                    <option value="3547700">Santo Anastácio</option>
+                    <option value="3547809">Santo André</option>
+                    <option value="3547908">Santo Antônio da Alegria</option>
+                    <option value="3548005">Santo Antônio de Posse</option>
+                    <option value="3548054">Santo Antônio do Aracanguá</option>
+                    <option value="3548104">Santo Antônio do Jardim</option>
+                    <option value="3548203">Santo Antônio do Pinhal</option>
+                    <option value="3548302">Santo Expedito</option>
+                    <option value="3548401">Santópolis do Aguapeí</option>
+                    <option value="3548500">Santos</option>
+                    <option value="3548609">São Bento do Sapucaí</option>
+                    <option value="3548708">São Bernardo do Campo</option>
+                    <option value="3548807">São Caetano do Sul</option>
+                    <option value="3548906">São Carlos</option>
+                    <option value="3549003">São Francisco</option>
+                    <option value="3549102">São João da Boa Vista</option>
+                    <option value="3549201">São João das Duas Pontes</option>
+                    <option value="3549250">São João de Iracema</option>
+                    <option value="3549300">São João do Pau d'Alho</option>
+                    <option value="3549409">São Joaquim da Barra</option>
+                    <option value="3549508">São José da Bela Vista</option>
+                    <option value="3549607">São José do Barreiro</option>
+                    <option value="3549706">São José do Rio Pardo</option>
+                    <option value="3549805">São José do Rio Preto</option>
+                    <option value="3549904">São José dos Campos</option>
+                    <option value="3549953">São Lourenço da Serra</option>
+                    <option value="3550001">São Luiz do Paraitinga</option>
+                    <option value="3550100">São Manuel</option>
+                    <option value="3550209">São Miguel Arcanjo</option>
+                    <option value="3550308">São Paulo</option>
+                    <option value="3550407">São Pedro</option>
+                    <option value="3550506">São Pedro do Turvo</option>
+                    <option value="3550605">São Roque</option>
+                    <option value="3550704">São Sebastião</option>
+                    <option value="3550803">São Sebastião da Grama</option>
+                    <option value="3550902">São Simão</option>
+                    <option value="3551009">São Vicente</option>
+                    <option value="3551108">Sarapuí</option>
+                    <option value="3551207">Sarutaiá</option>
+                    <option value="3551306">Sebastianópolis do Sul</option>
+                    <option value="3551405">Serra Azul</option>
+                    <option value="3551603">Serra Negra</option>
+                    <option value="3551504">Serrana</option>
+                    <option value="3551702">Sertãozinho</option>
+                    <option value="3551801">Sete Barras</option>
+                    <option value="3551900">Severínia</option>
+                    <option value="3552007">Silveiras</option>
+                    <option value="3552106">Socorro</option>
+                    <option value="3552205">Sorocaba</option>
+                    <option value="3552304">Sud Mennucci</option>
+                    <option value="3552403">Sumaré</option>
+                    <option value="3552551">Suzanápolis</option>
+                    <option value="3552502">Suzano</option>
+                    <option value="3552601">Tabapuã</option>
+                    <option value="3552700">Tabatinga</option>
+                    <option value="3552809">Taboão da Serra</option>
+                    <option value="3552908">Taciba</option>
+                    <option value="3553005">Taguaí</option>
+                    <option value="3553104">Taiaçu</option>
+                    <option value="3553203">Taiúva</option>
+                    <option value="3553302">Tambaú</option>
+                    <option value="3553401">Tanabi</option>
+                    <option value="3553500">Tapiraí</option>
+                    <option value="3553609">Tapiratiba</option>
+                    <option value="3553658">Taquaral</option>
+                    <option value="3553708">Taquaritinga</option>
+                    <option value="3553807">Taquarituba</option>
+                    <option value="3553856">Taquarivaí</option>
+                    <option value="3553906">Tarabai</option>
+                    <option value="3553955">Tarumã</option>
+                    <option value="3554003">Tatuí</option>
+                    <option value="3554102">Taubaté</option>
+                    <option value="3554201">Tejupá</option>
+                    <option value="3554300">Teodoro Sampaio</option>
+                    <option value="3554409">Terra Roxa</option>
+                    <option value="3554508">Tietê</option>
+                    <option value="3554607">Timburi</option>
+                    <option value="3554656">Torre de Pedra</option>
+                    <option value="3554706">Torrinha</option>
+                    <option value="3554755">Trabiju</option>
+                    <option value="3554805">Tremembé</option>
+                    <option value="3554904">Três Fronteiras</option>
+                    <option value="3554953">Tuiuti</option>
+                    <option value="3555000">Tupã</option>
+                    <option value="3555109">Tupi Paulista</option>
+                    <option value="3555208">Turiúba</option>
+                    <option value="3555307">Turmalina</option>
+                    <option value="3555356">Ubarana</option>
+                    <option value="3555406">Ubatuba</option>
+                    <option value="3555505">Ubirajara</option>
+                    <option value="3555604">Uchoa</option>
+                    <option value="3555703">União Paulista</option>
+                    <option value="3555802">Urânia</option>
+                    <option value="3555901">Uru</option>
+                    <option value="3556008">Urupês</option>
+                    <option value="3556107">Valentim Gentil</option>
+                    <option value="3556206">Valinhos</option>
+                    <option value="3556305">Valparaíso</option>
+                    <option value="3556354">Vargem</option>
+                    <option value="3556404">Vargem Grande do Sul</option>
+                    <option value="3556453">Vargem Grande Paulista</option>
+                    <option value="3556503">Várzea Paulista</option>
+                    <option value="3556602">Vera Cruz</option>
+                    <option value="3556701">Vinhedo</option>
+                    <option value="3556800">Viradouro</option>
+                    <option value="3556909">Vista Alegre do Alto</option>
+                    <option value="3556958">Vitória Brasil</option>
+                    <option value="3557006">Votorantim</option>
+                    <option value="3557105">Votuporanga</option>
+                    <option value="3557154">Zacarias</option>
+                </select>
+            </div>
+
+            <div class="field line" data-payment="ticket" style="--number:7">
+                <input type="checkbox" name="payment-address" id="payment-address" checked>
+                <label for="payment-address" style="color: var(--gray-500); font-weight: normal;">Utilizar endereço do cadastro como endereço de cobrança</label>
+            </div>
+
+            <!-- Next Step -->
+            <div class="field line" style="--number:9">
+                <input type="checkbox" name="terms" id="terms" required>
+                <label for="terms" style="color: var(--gray-500); font-weight: normal;">
+                    Li e concordo com a 
+                    <a style="color: var(--blue-700)" href="https://www.atribuna.com.br/politica-de-privacidade" target="_blank">
+                        política de privacidade
+                    </a>, 
+                    <a style="color: var(--blue-700)" href="https://www.atribuna.com.br/termos-de-uso" target="_blank">
+                        termos de uso
+                    </a> e 
+                    <a style="color: var(--blue-700)" href="https://www.atribuna.com.br/contrato" target="_blank">
+                        contrato de assinatura
+                    </a>
+                </label>
+            </div>
+
+            <button class="line" style="--number:10">
+                Continuar
+            </button>
+        </form>
+    </main>
+    
+    <footer>
+        <ul>
+            <li><a href="https://www.atribuna.com.br">Portal A Tribuna</a></li>
+            <li><a href="https://clube.atribuna.com.br">Clube A Tribuna</a></li>
+            <li><a href="https://edicaodigital.atribuna.com.br">Edição Digital</a></li>
+        </ul>
         <div>
-            <div style="background-color: var(--purple-500);"></div>
-            <hr style="border: 1px solid var(--black);">
-            <div style="background-color: var(--purple-500);"></div>
-            <hr style="border: 1px solid var(--black);">
-            <div style="background-color: var(--purple-500);"></div>
+            <p style="text-transform: uppercase;">A Tribuna de Santos Jornal e Editora LTDA | CNPJ: 58.183.401/0001-04</p>
+            <p>Rua João Pessoa, 350 - Paquetá, Santos/SP - 11013-002</p>
+            <p>
+                Central de Atendimento: <img src="./assets/img/whatsapp.svg" alt="Whatsapp"> (13)2102-7200 | atendimento@grupo-tribuna.com <br/>
+                De segunda a sexta, das 7h às 18h | Aos sábados, domingos e feriados das 7h às 12h
+            </p>
         </div>
-    </header>
-
-    <form action="">
-        <h2>Finalize seu cadastro</h2>
-
-        <div class="container address line" style="--number:2">
-            <div class="field">
-                <label for="cep">CEP</label>
-                <input type="text" name="cep" id="cep" data-js="cep" >
-            </div>
-
-            <div class="field">
-                <label for="address">Endereço</label>
-                <input type="text" name="address" id="address" data-field="logradouro" data-reset="true">
-            </div>
-
-            <div class="field">
-                <label for="number">Nº</label>
-                <input type="text" name="number" id="number" data-reset="true">
-            </div>
-        </div>
-
-        <div class="field">
-            <label for="complement">Complemento</label>
-            <input type="text" name="complement" id="complement" data-field="complemento" data-reset="true">
-        </div>
-
-        <div class="field">
-            <label for="district">Bairro</label>
-            <input type="text" name="district" id="district" data-field="bairro" data-reset="true">
-        </div>
-
-        <div class="field">
-            <label for="state">Estado</label>
-            <select name="state" id="state" data-field="uf" data-reset="true">
-                <option value="" default selected disabled hidden></option>
-                <option value="AC">Acre</option>
-                <option value="AL">Alagoas</option>
-                <option value="AP">Amapá</option>
-                <option value="AM">Amazonas</option>
-                <option value="BA">Bahia</option>
-                <option value="CE">Ceará</option>
-                <option value="ES">Espírito Santo</option>
-                <option value="GO">Goiás</option>
-                <option value="MA">Maranhão</option>
-                <option value="MT">Mato Grosso</option>
-                <option value="MS">Mato Grosso do Sul</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PA">Pará</option>
-                <option value="PB">Paraíba</option>
-                <option value="PR">Paraná</option>
-                <option value="PE">Pernambuco</option>
-                <option value="PI">Piauí</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="RN">Rio Grande do Norte</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="RO">Rondônia</option>
-                <option value="RR">Roraima</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="SP">São Paulo</option>
-                <option value="SE">Sergipe</option>
-                <option value="TO">Tocantins</option>
-            </select>
-        </div>
-
-        <div class="field">
-            <label for="city">Cidade</label>
-            <select name="city" id="city" data-field="ibge" data-reset="true">
-                <option value="" default selected disabled hidden></option>
-                <option value="3500105">Adamantina</option>
-                <option value="3500204">Adolfo</option>
-                <option value="3500303">Aguaí</option>
-                <option value="3500402">Águas da Prata</option>
-                <option value="3500501">Águas de Lindóia</option>
-                <option value="3500550">Águas de Santa Bárbara</option>
-                <option value="3500600">Águas de São Pedro</option>
-                <option value="3500709">Agudos</option>
-                <option value="3500758">Alambari</option>
-                <option value="3500808">Alfredo Marcondes</option>
-                <option value="3500907">Altair</option>
-                <option value="3501004">Altinópolis</option>
-                <option value="3501103">Alto Alegre</option>
-                <option value="3501152">Alumínio</option>
-                <option value="3501202">Álvares Florence</option>
-                <option value="3501301">Álvares Machado</option>
-                <option value="3501400">Álvaro de Carvalho</option>
-                <option value="3501509">Alvinlândia</option>
-                <option value="3501608">Americana</option>
-                <option value="3501707">Américo Brasiliense</option>
-                <option value="3501806">Américo de Campos</option>
-                <option value="3501905">Amparo</option>
-                <option value="3502002">Analândia</option>
-                <option value="3502101">Andradina</option>
-                <option value="3502200">Angatuba</option>
-                <option value="3502309">Anhembi</option>
-                <option value="3502408">Anhumas</option>
-                <option value="3502507">Aparecida</option>
-                <option value="3502606">Aparecida d'Oeste</option>
-                <option value="3502705">Apiaí</option>
-                <option value="3502754">Araçariguama</option>
-                <option value="3502804">Araçatuba</option>
-                <option value="3502903">Araçoiaba da Serra</option>
-                <option value="3503000">Aramina</option>
-                <option value="3503109">Arandu</option>
-                <option value="3503158">Arapeí</option>
-                <option value="3503208">Araraquara</option>
-                <option value="3503307">Araras</option>
-                <option value="3503356">Arco-Íris</option>
-                <option value="3503406">Arealva</option>
-                <option value="3503505">Areias</option>
-                <option value="3503604">Areiópolis</option>
-                <option value="3503703">Ariranha</option>
-                <option value="3503802">Artur Nogueira</option>
-                <option value="3503901">Arujá</option>
-                <option value="3503950">Aspásia</option>
-                <option value="3504008">Assis</option>
-                <option value="3504107">Atibaia</option>
-                <option value="3504206">Auriflama</option>
-                <option value="3504305">Avaí</option>
-                <option value="3504404">Avanhandava</option>
-                <option value="3504503">Avaré</option>
-                <option value="3504602">Bady Bassitt</option>
-                <option value="3504701">Balbinos</option>
-                <option value="3504800">Bálsamo</option>
-                <option value="3504909">Bananal</option>
-                <option value="3505005">Barão de Antonina</option>
-                <option value="3505104">Barbosa</option>
-                <option value="3505203">Bariri</option>
-                <option value="3505302">Barra Bonita</option>
-                <option value="3505351">Barra do Chapéu</option>
-                <option value="3505401">Barra do Turvo</option>
-                <option value="3505500">Barretos</option>
-                <option value="3505609">Barrinha</option>
-                <option value="3505708">Barueri</option>
-                <option value="3505807">Bastos</option>
-                <option value="3505906">Batatais</option>
-                <option value="3506003">Bauru</option>
-                <option value="3506102">Bebedouro</option>
-                <option value="3506201">Bento de Abreu</option>
-                <option value="3506300">Bernardino de Campos</option>
-                <option value="3506359">Bertioga</option>
-                <option value="3506409">Bilac</option>
-                <option value="3506508">Birigui</option>
-                <option value="3506607">Biritiba Mirim</option>
-                <option value="3506706">Boa Esperança do Sul</option>
-                <option value="3506805">Bocaina</option>
-                <option value="3506904">Bofete</option>
-                <option value="3507001">Boituva</option>
-                <option value="3507100">Bom Jesus dos Perdões</option>
-                <option value="3507159">Bom Sucesso de Itararé</option>
-                <option value="3507209">Borá</option>
-                <option value="3507308">Boracéia</option>
-                <option value="3507407">Borborema</option>
-                <option value="3507456">Borebi</option>
-                <option value="3507506">Botucatu</option>
-                <option value="3507605">Bragança Paulista</option>
-                <option value="3507704">Braúna</option>
-                <option value="3507753">Brejo Alegre</option>
-                <option value="3507803">Brodowski</option>
-                <option value="3507902">Brotas</option>
-                <option value="3508009">Buri</option>
-                <option value="3508108">Buritama</option>
-                <option value="3508207">Buritizal</option>
-                <option value="3508306">Cabrália Paulista</option>
-                <option value="3508405">Cabreúva</option>
-                <option value="3508504">Caçapava</option>
-                <option value="3508603">Cachoeira Paulista</option>
-                <option value="3508702">Caconde</option>
-                <option value="3508801">Cafelândia</option>
-                <option value="3508900">Caiabu</option>
-                <option value="3509007">Caieiras</option>
-                <option value="3509106">Caiuá</option>
-                <option value="3509205">Cajamar</option>
-                <option value="3509254">Cajati</option>
-                <option value="3509304">Cajobi</option>
-                <option value="3509403">Cajuru</option>
-                <option value="3509452">Campina do Monte Alegre</option>
-                <option value="3509502">Campinas</option>
-                <option value="3509601">Campo Limpo Paulista</option>
-                <option value="3509700">Campos do Jordão</option>
-                <option value="3509809">Campos Novos Paulista</option>
-                <option value="3509908">Cananéia</option>
-                <option value="3509957">Canas</option>
-                <option value="3510005">Cândido Mota</option>
-                <option value="3510104">Cândido Rodrigues</option>
-                <option value="3510153">Canitar</option>
-                <option value="3510203">Capão Bonito</option>
-                <option value="3510302">Capela do Alto</option>
-                <option value="3510401">Capivari</option>
-                <option value="3510500">Caraguatatuba</option>
-                <option value="3510609">Carapicuíba</option>
-                <option value="3510708">Cardoso</option>
-                <option value="3510807">Casa Branca</option>
-                <option value="3510906">Cássia dos Coqueiros</option>
-                <option value="3511003">Castilho</option>
-                <option value="3511102">Catanduva</option>
-                <option value="3511201">Catiguá</option>
-                <option value="3511300">Cedral</option>
-                <option value="3511409">Cerqueira César</option>
-                <option value="3511508">Cerquilho</option>
-                <option value="3511607">Cesário Lange</option>
-                <option value="3511706">Charqueada</option>
-                <option value="3557204">Chavantes</option>
-                <option value="3511904">Clementina</option>
-                <option value="3512001">Colina</option>
-                <option value="3512100">Colômbia</option>
-                <option value="3512209">Conchal</option>
-                <option value="3512308">Conchas</option>
-                <option value="3512407">Cordeirópolis</option>
-                <option value="3512506">Coroados</option>
-                <option value="3512605">Coronel Macedo</option>
-                <option value="3512704">Corumbataí</option>
-                <option value="3512803">Cosmópolis</option>
-                <option value="3512902">Cosmorama</option>
-                <option value="3513009">Cotia</option>
-                <option value="3513108">Cravinhos</option>
-                <option value="3513207">Cristais Paulista</option>
-                <option value="3513306">Cruzália</option>
-                <option value="3513405">Cruzeiro</option>
-                <option value="3513504">Cubatão</option>
-                <option value="3513603">Cunha</option>
-                <option value="3513702">Descalvado</option>
-                <option value="3513801">Diadema</option>
-                <option value="3513850">Dirce Reis</option>
-                <option value="3513900">Divinolândia</option>
-                <option value="3514007">Dobrada</option>
-                <option value="3514106">Dois Córregos</option>
-                <option value="3514205">Dolcinópolis</option>
-                <option value="3514304">Dourado</option>
-                <option value="3514403">Dracena</option>
-                <option value="3514502">Duartina</option>
-                <option value="3514601">Dumont</option>
-                <option value="3514700">Echaporã</option>
-                <option value="3514809">Eldorado</option>
-                <option value="3514908">Elias Fausto</option>
-                <option value="3514924">Elisiário</option>
-                <option value="3514957">Embaúba</option>
-                <option value="3515004">Embu das Artes</option>
-                <option value="3515103">Embu-Guaçu</option>
-                <option value="3515129">Emilianópolis</option>
-                <option value="3515152">Engenheiro Coelho</option>
-                <option value="3515186">Espírito Santo do Pinhal</option>
-                <option value="3515194">Espírito Santo do Turvo</option>
-                <option value="3557303">Estiva Gerbi</option>
-                <option value="3515301">Estrela do Norte</option>
-                <option value="3515202">Estrela d'Oeste</option>
-                <option value="3515350">Euclides da Cunha Paulista</option>
-                <option value="3515400">Fartura</option>
-                <option value="3515608">Fernando Prestes</option>
-                <option value="3515509">Fernandópolis</option>
-                <option value="3515657">Fernão</option>
-                <option value="3515707">Ferraz de Vasconcelos</option>
-                <option value="3515806">Flora Rica</option>
-                <option value="3515905">Floreal</option>
-                <option value="3516002">Flórida Paulista</option>
-                <option value="3516101">Florínea</option>
-                <option value="3516200">Franca</option>
-                <option value="3516309">Francisco Morato</option>
-                <option value="3516408">Franco da Rocha</option>
-                <option value="3516507">Gabriel Monteiro</option>
-                <option value="3516606">Gália</option>
-                <option value="3516705">Garça</option>
-                <option value="3516804">Gastão Vidigal</option>
-                <option value="3516853">Gavião Peixoto</option>
-                <option value="3516903">General Salgado</option>
-                <option value="3517000">Getulina</option>
-                <option value="3517109">Glicério</option>
-                <option value="3517208">Guaiçara</option>
-                <option value="3517307">Guaimbê</option>
-                <option value="3517406">Guaíra</option>
-                <option value="3517505">Guapiaçu</option>
-                <option value="3517604">Guapiara</option>
-                <option value="3517703">Guará</option>
-                <option value="3517802">Guaraçaí</option>
-                <option value="3517901">Guaraci</option>
-                <option value="3518008">Guarani d'Oeste</option>
-                <option value="3518107">Guarantã</option>
-                <option value="3518206">Guararapes</option>
-                <option value="3518305">Guararema</option>
-                <option value="3518404">Guaratinguetá</option>
-                <option value="3518503">Guareí</option>
-                <option value="3518602">Guariba</option>
-                <option value="3518701">Guarujá</option>
-                <option value="3518800">Guarulhos</option>
-                <option value="3518859">Guatapará</option>
-                <option value="3518909">Guzolândia</option>
-                <option value="3519006">Herculândia</option>
-                <option value="3519055">Holambra</option>
-                <option value="3519071">Hortolândia</option>
-                <option value="3519105">Iacanga</option>
-                <option value="3519204">Iacri</option>
-                <option value="3519253">Iaras</option>
-                <option value="3519303">Ibaté</option>
-                <option value="3519402">Ibirá</option>
-                <option value="3519501">Ibirarema</option>
-                <option value="3519600">Ibitinga</option>
-                <option value="3519709">Ibiúna</option>
-                <option value="3519808">Icém</option>
-                <option value="3519907">Iepê</option>
-                <option value="3520004">Igaraçu do Tietê</option>
-                <option value="3520103">Igarapava</option>
-                <option value="3520202">Igaratá</option>
-                <option value="3520301">Iguape</option>
-                <option value="3520426">Ilha Comprida</option>
-                <option value="3520442">Ilha Solteira</option>
-                <option value="3520400">Ilhabela</option>
-                <option value="3520509">Indaiatuba</option>
-                <option value="3520608">Indiana</option>
-                <option value="3520707">Indiaporã</option>
-                <option value="3520806">Inúbia Paulista</option>
-                <option value="3520905">Ipaussu</option>
-                <option value="3521002">Iperó</option>
-                <option value="3521101">Ipeúna</option>
-                <option value="3521150">Ipiguá</option>
-                <option value="3521200">Iporanga</option>
-                <option value="3521309">Ipuã</option>
-                <option value="3521408">Iracemápolis</option>
-                <option value="3521507">Irapuã</option>
-                <option value="3521606">Irapuru</option>
-                <option value="3521705">Itaberá</option>
-                <option value="3521804">Itaí</option>
-                <option value="3521903">Itajobi</option>
-                <option value="3522000">Itaju</option>
-                <option value="3522109">Itanhaém</option>
-                <option value="3522158">Itaoca</option>
-                <option value="3522208">Itapecerica da Serra</option>
-                <option value="3522307">Itapetininga</option>
-                <option value="3522406">Itapeva</option>
-                <option value="3522505">Itapevi</option>
-                <option value="3522604">Itapira</option>
-                <option value="3522653">Itapirapuã Paulista</option>
-                <option value="3522703">Itápolis</option>
-                <option value="3522802">Itaporanga</option>
-                <option value="3522901">Itapuí</option>
-                <option value="3523008">Itapura</option>
-                <option value="3523107">Itaquaquecetuba</option>
-                <option value="3523206">Itararé</option>
-                <option value="3523305">Itariri</option>
-                <option value="3523404">Itatiba</option>
-                <option value="3523503">Itatinga</option>
-                <option value="3523602">Itirapina</option>
-                <option value="3523701">Itirapuã</option>
-                <option value="3523800">Itobi</option>
-                <option value="3523909">Itu</option>
-                <option value="3524006">Itupeva</option>
-                <option value="3524105">Ituverava</option>
-                <option value="3524204">Jaborandi</option>
-                <option value="3524303">Jaboticabal</option>
-                <option value="3524402">Jacareí</option>
-                <option value="3524501">Jaci</option>
-                <option value="3524600">Jacupiranga</option>
-                <option value="3524709">Jaguariúna</option>
-                <option value="3524808">Jales</option>
-                <option value="3524907">Jambeiro</option>
-                <option value="3525003">Jandira</option>
-                <option value="3525102">Jardinópolis</option>
-                <option value="3525201">Jarinu</option>
-                <option value="3525300">Jaú</option>
-                <option value="3525409">Jeriquara</option>
-                <option value="3525508">Joanópolis</option>
-                <option value="3525607">João Ramalho</option>
-                <option value="3525706">José Bonifácio</option>
-                <option value="3525805">Júlio Mesquita</option>
-                <option value="3525854">Jumirim</option>
-                <option value="3525904">Jundiaí</option>
-                <option value="3526001">Junqueirópolis</option>
-                <option value="3526100">Juquiá</option>
-                <option value="3526209">Juquitiba</option>
-                <option value="3526308">Lagoinha</option>
-                <option value="3526407">Laranjal Paulista</option>
-                <option value="3526506">Lavínia</option>
-                <option value="3526605">Lavrinhas</option>
-                <option value="3526704">Leme</option>
-                <option value="3526803">Lençóis Paulista</option>
-                <option value="3526902">Limeira</option>
-                <option value="3527009">Lindóia</option>
-                <option value="3527108">Lins</option>
-                <option value="3527207">Lorena</option>
-                <option value="3527256">Lourdes</option>
-                <option value="3527306">Louveira</option>
-                <option value="3527405">Lucélia</option>
-                <option value="3527504">Lucianópolis</option>
-                <option value="3527603">Luís Antônio</option>
-                <option value="3527702">Luiziânia</option>
-                <option value="3527801">Lupércio</option>
-                <option value="3527900">Lutécia</option>
-                <option value="3528007">Macatuba</option>
-                <option value="3528106">Macaubal</option>
-                <option value="3528205">Macedônia</option>
-                <option value="3528304">Magda</option>
-                <option value="3528403">Mairinque</option>
-                <option value="3528502">Mairiporã</option>
-                <option value="3528601">Manduri</option>
-                <option value="3528700">Marabá Paulista</option>
-                <option value="3528809">Maracaí</option>
-                <option value="3528858">Marapoama</option>
-                <option value="3528908">Mariápolis</option>
-                <option value="3529005">Marília</option>
-                <option value="3529104">Marinópolis</option>
-                <option value="3529203">Martinópolis</option>
-                <option value="3529302">Matão</option>
-                <option value="3529401">Mauá</option>
-                <option value="3529500">Mendonça</option>
-                <option value="3529609">Meridiano</option>
-                <option value="3529658">Mesópolis</option>
-                <option value="3529708">Miguelópolis</option>
-                <option value="3529807">Mineiros do Tietê</option>
-                <option value="3530003">Mira Estrela</option>
-                <option value="3529906">Miracatu</option>
-                <option value="3530102">Mirandópolis</option>
-                <option value="3530201">Mirante do Paranapanema</option>
-                <option value="3530300">Mirassol</option>
-                <option value="3530409">Mirassolândia</option>
-                <option value="3530508">Mococa</option>
-                <option value="3530607">Mogi das Cruzes</option>
-                <option value="3530706">Mogi Guaçu</option>
-                <option value="3530805">Mogi Mirim</option>
-                <option value="3530904">Mombuca</option>
-                <option value="3531001">Monções</option>
-                <option value="3531100">Mongaguá</option>
-                <option value="3531209">Monte Alegre do Sul</option>
-                <option value="3531308">Monte Alto</option>
-                <option value="3531407">Monte Aprazível</option>
-                <option value="3531506">Monte Azul Paulista</option>
-                <option value="3531605">Monte Castelo</option>
-                <option value="3531803">Monte Mor</option>
-                <option value="3531704">Monteiro Lobato</option>
-                <option value="3531902">Morro Agudo</option>
-                <option value="3532009">Morungaba</option>
-                <option value="3532058">Motuca</option>
-                <option value="3532108">Murutinga do Sul</option>
-                <option value="3532157">Nantes</option>
-                <option value="3532207">Narandiba</option>
-                <option value="3532306">Natividade da Serra</option>
-                <option value="3532405">Nazaré Paulista</option>
-                <option value="3532504">Neves Paulista</option>
-                <option value="3532603">Nhandeara</option>
-                <option value="3532702">Nipoã</option>
-                <option value="3532801">Nova Aliança</option>
-                <option value="3532827">Nova Campina</option>
-                <option value="3532843">Nova Canaã Paulista</option>
-                <option value="3532868">Nova Castilho</option>
-                <option value="3532900">Nova Europa</option>
-                <option value="3533007">Nova Granada</option>
-                <option value="3533106">Nova Guataporanga</option>
-                <option value="3533205">Nova Independência</option>
-                <option value="3533304">Nova Luzitânia</option>
-                <option value="3533403">Nova Odessa</option>
-                <option value="3533254">Novais</option>
-                <option value="3533502">Novo Horizonte</option>
-                <option value="3533601">Nuporanga</option>
-                <option value="3533700">Ocauçu</option>
-                <option value="3533809">Óleo</option>
-                <option value="3533908">Olímpia</option>
-                <option value="3534005">Onda Verde</option>
-                <option value="3534104">Oriente</option>
-                <option value="3534203">Orindiúva</option>
-                <option value="3534302">Orlândia</option>
-                <option value="3534401">Osasco</option>
-                <option value="3534500">Oscar Bressane</option>
-                <option value="3534609">Osvaldo Cruz</option>
-                <option value="3534708">Ourinhos</option>
-                <option value="3534807">Ouro Verde</option>
-                <option value="3534757">Ouroeste</option>
-                <option value="3534906">Pacaembu</option>
-                <option value="3535002">Palestina</option>
-                <option value="3535101">Palmares Paulista</option>
-                <option value="3535200">Palmeira d'Oeste</option>
-                <option value="3535309">Palmital</option>
-                <option value="3535408">Panorama</option>
-                <option value="3535507">Paraguaçu Paulista</option>
-                <option value="3535606">Paraibuna</option>
-                <option value="3535705">Paraíso</option>
-                <option value="3535804">Paranapanema</option>
-                <option value="3535903">Paranapuã</option>
-                <option value="3536000">Parapuã</option>
-                <option value="3536109">Pardinho</option>
-                <option value="3536208">Pariquera-Açu</option>
-                <option value="3536257">Parisi</option>
-                <option value="3536307">Patrocínio Paulista</option>
-                <option value="3536406">Paulicéia</option>
-                <option value="3536505">Paulínia</option>
-                <option value="3536570">Paulistânia</option>
-                <option value="3536604">Paulo de Faria</option>
-                <option value="3536703">Pederneiras</option>
-                <option value="3536802">Pedra Bela</option>
-                <option value="3536901">Pedranópolis</option>
-                <option value="3537008">Pedregulho</option>
-                <option value="3537107">Pedreira</option>
-                <option value="3537156">Pedrinhas Paulista</option>
-                <option value="3537206">Pedro de Toledo</option>
-                <option value="3537305">Penápolis</option>
-                <option value="3537404">Pereira Barreto</option>
-                <option value="3537503">Pereiras</option>
-                <option value="3537602">Peruíbe</option>
-                <option value="3537701">Piacatu</option>
-                <option value="3537800">Piedade</option>
-                <option value="3537909">Pilar do Sul</option>
-                <option value="3538006">Pindamonhangaba</option>
-                <option value="3538105">Pindorama</option>
-                <option value="3538204">Pinhalzinho</option>
-                <option value="3538303">Piquerobi</option>
-                <option value="3538501">Piquete</option>
-                <option value="3538600">Piracaia</option>
-                <option value="3538709">Piracicaba</option>
-                <option value="3538808">Piraju</option>
-                <option value="3538907">Pirajuí</option>
-                <option value="3539004">Pirangi</option>
-                <option value="3539103">Pirapora do Bom Jesus</option>
-                <option value="3539202">Pirapozinho</option>
-                <option value="3539301">Pirassununga</option>
-                <option value="3539400">Piratininga</option>
-                <option value="3539509">Pitangueiras</option>
-                <option value="3539608">Planalto</option>
-                <option value="3539707">Platina</option>
-                <option value="3539806">Poá</option>
-                <option value="3539905">Poloni</option>
-                <option value="3540002">Pompéia</option>
-                <option value="3540101">Pongaí</option>
-                <option value="3540200">Pontal</option>
-                <option value="3540259">Pontalinda</option>
-                <option value="3540309">Pontes Gestal</option>
-                <option value="3540408">Populina</option>
-                <option value="3540507">Porangaba</option>
-                <option value="3540606">Porto Feliz</option>
-                <option value="3540705">Porto Ferreira</option>
-                <option value="3540754">Potim</option>
-                <option value="3540804">Potirendaba</option>
-                <option value="3540853">Pracinha</option>
-                <option value="3540903">Pradópolis</option>
-                <option value="3541000">Praia Grande</option>
-                <option value="3541059">Pratânia</option>
-                <option value="3541109">Presidente Alves</option>
-                <option value="3541208">Presidente Bernardes</option>
-                <option value="3541307">Presidente Epitácio</option>
-                <option value="3541406">Presidente Prudente</option>
-                <option value="3541505">Presidente Venceslau</option>
-                <option value="3541604">Promissão</option>
-                <option value="3541653">Quadra</option>
-                <option value="3541703">Quatá</option>
-                <option value="3541802">Queiroz</option>
-                <option value="3541901">Queluz</option>
-                <option value="3542008">Quintana</option>
-                <option value="3542107">Rafard</option>
-                <option value="3542206">Rancharia</option>
-                <option value="3542305">Redenção da Serra</option>
-                <option value="3542404">Regente Feijó</option>
-                <option value="3542503">Reginópolis</option>
-                <option value="3542602">Registro</option>
-                <option value="3542701">Restinga</option>
-                <option value="3542800">Ribeira</option>
-                <option value="3542909">Ribeirão Bonito</option>
-                <option value="3543006">Ribeirão Branco</option>
-                <option value="3543105">Ribeirão Corrente</option>
-                <option value="3543204">Ribeirão do Sul</option>
-                <option value="3543238">Ribeirão dos Índios</option>
-                <option value="3543253">Ribeirão Grande</option>
-                <option value="3543303">Ribeirão Pires</option>
-                <option value="3543402">Ribeirão Preto</option>
-                <option value="3543600">Rifaina</option>
-                <option value="3543709">Rincão</option>
-                <option value="3543808">Rinópolis</option>
-                <option value="3543907">Rio Claro</option>
-                <option value="3544004">Rio das Pedras</option>
-                <option value="3544103">Rio Grande da Serra</option>
-                <option value="3544202">Riolândia</option>
-                <option value="3543501">Riversul</option>
-                <option value="3544251">Rosana</option>
-                <option value="3544301">Roseira</option>
-                <option value="3544400">Rubiácea</option>
-                <option value="3544509">Rubinéia</option>
-                <option value="3544608">Sabino</option>
-                <option value="3544707">Sagres</option>
-                <option value="3544806">Sales</option>
-                <option value="3544905">Sales Oliveira</option>
-                <option value="3545001">Salesópolis</option>
-                <option value="3545100">Salmourão</option>
-                <option value="3545159">Saltinho</option>
-                <option value="3545209">Salto</option>
-                <option value="3545308">Salto de Pirapora</option>
-                <option value="3545407">Salto Grande</option>
-                <option value="3545506">Sandovalina</option>
-                <option value="3545605">Santa Adélia</option>
-                <option value="3545704">Santa Albertina</option>
-                <option value="3545803">Santa Bárbara d'Oeste</option>
-                <option value="3546009">Santa Branca</option>
-                <option value="3546108">Santa Clara d'Oeste</option>
-                <option value="3546207">Santa Cruz da Conceição</option>
-                <option value="3546256">Santa Cruz da Esperança</option>
-                <option value="3546306">Santa Cruz das Palmeiras</option>
-                <option value="3546405">Santa Cruz do Rio Pardo</option>
-                <option value="3546504">Santa Ernestina</option>
-                <option value="3546603">Santa Fé do Sul</option>
-                <option value="3546702">Santa Gertrudes</option>
-                <option value="3546801">Santa Isabel</option>
-                <option value="3546900">Santa Lúcia</option>
-                <option value="3547007">Santa Maria da Serra</option>
-                <option value="3547106">Santa Mercedes</option>
-                <option value="3547502">Santa Rita do Passa Quatro</option>
-                <option value="3547403">Santa Rita d'Oeste</option>
-                <option value="3547601">Santa Rosa de Viterbo</option>
-                <option value="3547650">Santa Salete</option>
-                <option value="3547205">Santana da Ponte Pensa</option>
-                <option value="3547304">Santana de Parnaíba</option>
-                <option value="3547700">Santo Anastácio</option>
-                <option value="3547809">Santo André</option>
-                <option value="3547908">Santo Antônio da Alegria</option>
-                <option value="3548005">Santo Antônio de Posse</option>
-                <option value="3548054">Santo Antônio do Aracanguá</option>
-                <option value="3548104">Santo Antônio do Jardim</option>
-                <option value="3548203">Santo Antônio do Pinhal</option>
-                <option value="3548302">Santo Expedito</option>
-                <option value="3548401">Santópolis do Aguapeí</option>
-                <option value="3548500">Santos</option>
-                <option value="3548609">São Bento do Sapucaí</option>
-                <option value="3548708">São Bernardo do Campo</option>
-                <option value="3548807">São Caetano do Sul</option>
-                <option value="3548906">São Carlos</option>
-                <option value="3549003">São Francisco</option>
-                <option value="3549102">São João da Boa Vista</option>
-                <option value="3549201">São João das Duas Pontes</option>
-                <option value="3549250">São João de Iracema</option>
-                <option value="3549300">São João do Pau d'Alho</option>
-                <option value="3549409">São Joaquim da Barra</option>
-                <option value="3549508">São José da Bela Vista</option>
-                <option value="3549607">São José do Barreiro</option>
-                <option value="3549706">São José do Rio Pardo</option>
-                <option value="3549805">São José do Rio Preto</option>
-                <option value="3549904">São José dos Campos</option>
-                <option value="3549953">São Lourenço da Serra</option>
-                <option value="3550001">São Luiz do Paraitinga</option>
-                <option value="3550100">São Manuel</option>
-                <option value="3550209">São Miguel Arcanjo</option>
-                <option value="3550308">São Paulo</option>
-                <option value="3550407">São Pedro</option>
-                <option value="3550506">São Pedro do Turvo</option>
-                <option value="3550605">São Roque</option>
-                <option value="3550704">São Sebastião</option>
-                <option value="3550803">São Sebastião da Grama</option>
-                <option value="3550902">São Simão</option>
-                <option value="3551009">São Vicente</option>
-                <option value="3551108">Sarapuí</option>
-                <option value="3551207">Sarutaiá</option>
-                <option value="3551306">Sebastianópolis do Sul</option>
-                <option value="3551405">Serra Azul</option>
-                <option value="3551603">Serra Negra</option>
-                <option value="3551504">Serrana</option>
-                <option value="3551702">Sertãozinho</option>
-                <option value="3551801">Sete Barras</option>
-                <option value="3551900">Severínia</option>
-                <option value="3552007">Silveiras</option>
-                <option value="3552106">Socorro</option>
-                <option value="3552205">Sorocaba</option>
-                <option value="3552304">Sud Mennucci</option>
-                <option value="3552403">Sumaré</option>
-                <option value="3552551">Suzanápolis</option>
-                <option value="3552502">Suzano</option>
-                <option value="3552601">Tabapuã</option>
-                <option value="3552700">Tabatinga</option>
-                <option value="3552809">Taboão da Serra</option>
-                <option value="3552908">Taciba</option>
-                <option value="3553005">Taguaí</option>
-                <option value="3553104">Taiaçu</option>
-                <option value="3553203">Taiúva</option>
-                <option value="3553302">Tambaú</option>
-                <option value="3553401">Tanabi</option>
-                <option value="3553500">Tapiraí</option>
-                <option value="3553609">Tapiratiba</option>
-                <option value="3553658">Taquaral</option>
-                <option value="3553708">Taquaritinga</option>
-                <option value="3553807">Taquarituba</option>
-                <option value="3553856">Taquarivaí</option>
-                <option value="3553906">Tarabai</option>
-                <option value="3553955">Tarumã</option>
-                <option value="3554003">Tatuí</option>
-                <option value="3554102">Taubaté</option>
-                <option value="3554201">Tejupá</option>
-                <option value="3554300">Teodoro Sampaio</option>
-                <option value="3554409">Terra Roxa</option>
-                <option value="3554508">Tietê</option>
-                <option value="3554607">Timburi</option>
-                <option value="3554656">Torre de Pedra</option>
-                <option value="3554706">Torrinha</option>
-                <option value="3554755">Trabiju</option>
-                <option value="3554805">Tremembé</option>
-                <option value="3554904">Três Fronteiras</option>
-                <option value="3554953">Tuiuti</option>
-                <option value="3555000">Tupã</option>
-                <option value="3555109">Tupi Paulista</option>
-                <option value="3555208">Turiúba</option>
-                <option value="3555307">Turmalina</option>
-                <option value="3555356">Ubarana</option>
-                <option value="3555406">Ubatuba</option>
-                <option value="3555505">Ubirajara</option>
-                <option value="3555604">Uchoa</option>
-                <option value="3555703">União Paulista</option>
-                <option value="3555802">Urânia</option>
-                <option value="3555901">Uru</option>
-                <option value="3556008">Urupês</option>
-                <option value="3556107">Valentim Gentil</option>
-                <option value="3556206">Valinhos</option>
-                <option value="3556305">Valparaíso</option>
-                <option value="3556354">Vargem</option>
-                <option value="3556404">Vargem Grande do Sul</option>
-                <option value="3556453">Vargem Grande Paulista</option>
-                <option value="3556503">Várzea Paulista</option>
-                <option value="3556602">Vera Cruz</option>
-                <option value="3556701">Vinhedo</option>
-                <option value="3556800">Viradouro</option>
-                <option value="3556909">Vista Alegre do Alto</option>
-                <option value="3556958">Vitória Brasil</option>
-                <option value="3557006">Votorantim</option>
-                <option value="3557105">Votuporanga</option>
-                <option value="3557154">Zacarias</option>
-            </select>
-        </div>
-
-        <button class="line" style="--number:5">
-            Finalizar
-        </button>
-    </form>
-</main>
-
-<footer>
-    <ul>
-        <li><a href="https://www.atribuna.com.br">Portal A Tribuna</a></li>
-        <li><a href="https://clube.atribuna.com.br">Clube A Tribuna</a></li>
-        <li><a href="https://edicaodigital.atribuna.com.br">Edição Digital</a></li>
-    </ul>
-    <div>
-        <p style="text-transform: uppercase;">A Tribuna de Santos Jornal e Editora LTDA | CNPJ: 58.183.401/0001-04</p>
-        <p>Rua João Pessoa, 350 - Paquetá, Santos/SP - 11013-002</p>
-        <p>
-            Central de Atendimento: <img src="./assets/img/whatsapp.svg" alt="Whatsapp"> (13)2102-7200 | atendimento@grupo-tribuna.com <br/>
-            De segunda a sexta, das 7h às 18h | Aos sábados, domingos e feriados das 7h às 12h
-        </p>
-    </div>
-</footer>
+    </footer>
 </body>
 </html>
