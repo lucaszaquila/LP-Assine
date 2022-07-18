@@ -42,8 +42,8 @@
                 <div style="background-color: var(--purple-500);"></div>
                 <hr style="border: 1px solid var(--black);">
                 <div style="background-color: var(--purple-500);"></div>
-                <hr>
-                <div></div>
+                <hr style="border: 1px solid var(--black);">
+                <div style="background-color: var(--purple-500);"></div>
             </div>
         </header>
 
@@ -75,7 +75,7 @@
             <!-- Credit -->
             <div class="field" data-payment="credit">
                 <label for="card">Nº do cartão</label> 
-                <input type="number" name="card" id="card" data-js="card"  inputmode="numeric">
+                <input type="text" name="card" id="card" data-js="card" inputmode="numeric">
                 <img src="./assets/img/cartoes.png" alt="Card flags" style="width: 40%; margin-top: 0.5rem;">
             </div>
 
@@ -95,7 +95,7 @@
 
             <div class="field" data-payment="credit">
                 <label for="code">Código de segurança</label>
-                <input type="number" name="code" id="code"  inputmode="numeric">
+                <input type="text" name="code" id="code"  inputmode="numeric">
             </div>
 
             <!-- Debit -->
@@ -899,7 +899,7 @@
             </div>
 
             <button class="line" style="--number:10">
-                Continuar
+                Finalizar
             </button>
         </form>
     </main>
