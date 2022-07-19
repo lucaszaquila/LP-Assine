@@ -11,11 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 
-    <!-- React scripts -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/global.css">
     <link rel="stylesheet" href="./assets/css/index.css">
@@ -39,6 +34,56 @@
     </nav>
 
     <main>
+        <section class="globoplay">
+            <h2>
+                Escolha seu <span>plano ideal</span>
+            </h2>
+
+            <div class="card">
+                <h2>Impresso</h2>
+
+                <div>
+                    <span>
+                        R$ <span>78,20</span> /mês
+                    </span>
+                </div>
+
+                <span>Total da assinatura R$234,60</span>
+
+                <h3>Combo imperdível</h3>
+
+                <p>Assine o plano <span>Trimestral</span><br> e ganhe 1 mês grátis de</p>
+
+                <img src="./assets/img/globoplay.png" alt="Globoplay">
+
+                <a href="./step1.html">
+                    Assine agora
+                </a>
+            </div>
+
+            <div class="card">
+                <h2>Impresso</h2>
+
+                <div>
+                    <span>
+                        R$ <span>9,90</span> /mês
+                    </span>
+                </div>
+
+                <span>Total da assinatura R$110,80</span>
+
+                <h3>Combo imperdível</h3>
+
+                <p>Assine o plano <span>Anual</span><br> e ganhe 1 mês grátis de</p>
+
+                <img src="./assets/img/globoplay.png" alt="Globoplay">
+
+                <a href="./step1.html">
+                    Assine agora
+                </a>
+            </div>
+        </section>
+
         <section class="sign">
             <h1>
                 Escolha seu <span>plano ideal</span>
@@ -187,14 +232,19 @@
                 <h2>
                     Convênio <br>A Tribuna
                 </h2>
-                <a href="./step1.html">
-                    Assine agora
-                </a>
-                <span>Desconto exclusivo para empresas conveniadas</span>
+
+                <span>Desconto exclusivo para empresas conveniadas!</span>
             </div>
 
             <div class="card">
                 <h2>Impresso <span>30%</span></h2>
+
+                <div>
+                    <span>
+                        R$ <span>54,74</span> /mês
+                    </span>
+                </div>
+
                 <ul>
                     <li>
                         Jornal Impresso todos os dias
@@ -203,11 +253,23 @@
                         Assinatura Digital
                     </li>
                 </ul>
+
+                <a href="./step1.html">
+                    Assine agora
+                </a>
             </div>
 
             <div class="card">
                 <h2>Digital  <span>50%</span></h2>
+
                 <span>+1 mês gratis</span>
+
+                <div>
+                    <span>
+                        R$ <span>9,90</span> /mês
+                    </span>
+                </div>
+
                 <ul>
                     <li>
                         Jornal Digital todos os dias
@@ -216,6 +278,10 @@
                         Assinatura Digital
                     </li>
                 </ul>
+
+                <a href="./step1.html">
+                    Assine agora
+                </a>
             </div>
         </section>
 
@@ -249,6 +315,19 @@
             </div>
         </section>
 
+        <section class="partners">
+            <img src="./assets/img/clube-assinante.png" alt="Clube do Assinante">
+            
+            <div>
+                <h2>
+                    +300 parceiros
+                </h2>
+                <span>As melhores marcas regionais e nacionais estão aqui.</span>
+    
+                <div id="partners"></div>
+            </div>
+        </section>
+
         <section class="club">
             <img src="./assets/img/woman.png" alt="Modelo">
             <span>O Clube foi feito para você que gosta de economizar e se divertir</span>
@@ -258,13 +337,25 @@
             </div>
         </section>
 
-        <section class="partners">
-            <h2>
-                +300 parceiros
-            </h2>
-            <span>As melhores marcas regionais e nacionais estão aqui.</span>
+        <section class="events">
+            <img src="./assets/img/clube-assinante.png" alt="">
 
-            <div id="partners"></div>
+            <div class="list">
+                <img src="./assets/img/scratched-plus.svg" alt="">
+                <ul>
+                    <li>Evento</li>
+                    <li>Show</li>
+                    <li>Teatro</li>
+                    <li>Sorteio</li>
+                </ul>
+            </div>
+
+            <div class="musician">
+                <img id="background" src="./assets/img/background.svg" alt="">
+                <img id="man" src="./assets/img/man.png" alt="">
+                <img id="notes" src="./assets/img/notes.svg" alt="">
+                <img id="tickets" src="./assets/img/tickets.png" alt="">
+            </div>
         </section>
 
         <section class="video">

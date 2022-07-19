@@ -1,4 +1,38 @@
-.sign {
+main .globoplay .card {
+    text-align: center;  
+    max-width: 400px;
+    padding: 1rem 3rem;
+}
+
+.globoplay h2 {
+    grid-area: title;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.globoplay .card img {
+    max-width: 150px;
+
+    position: relative;
+    top: -10px;
+}
+
+.globoplay .card > span {
+    font-size: 0.8rem;
+
+    position: relative;
+    top: -10px;
+}
+
+.globoplay .card h3 {
+    font-size: 1.5rem;
+}
+
+.globoplay .card p span {
+    text-transform: uppercase;
+}
+
+.sign, .globoplay {
     color: var(--white);
     background-color: var(--blue-700);
     padding: 3rem 2rem 5rem 2rem;
@@ -24,7 +58,8 @@
     font-weight: 700;
 }
 
-.sign .container {
+.sign .container,
+.globoplay .card {
     grid-area: card1;
     justify-self: flex-end;
 
@@ -32,12 +67,14 @@
     max-width: 500px;
 }
 
-.sign .container:last-child {
+.sign .container:last-child,
+.globoplay .card:last-child {
     grid-area: card2;
     justify-self: flex-start;
 }
 
-.sign .container:last-child .card {
+.sign .container:last-child .card,
+.globoplay .card:last-child  {
     color: var(--black);
     background-color: var(--white);
 }
@@ -50,7 +87,9 @@
     border-color: var(--white);
 }
 
-.sign .card {
+.sign .card,
+.globoplay .card {
+    height: 100%;
     border-radius: 10px;
     background-color: var(--purple-500); 
     padding: 1rem;
@@ -69,9 +108,11 @@
     font-size: 3rem;
 }
 
-.sign .card > div span span {
-    font-size: 2rem;
-    font-weight: 700;
+.sign .card > div span span,
+.globoplay .card > div span span,
+.sale .card > div span span {
+    font-size: 2.5rem;
+    font-weight: 900;
     margin: 0 5px;
 }
 
@@ -103,7 +144,8 @@
 
 .sign .card a,
 .sign .card button,
-.sign .details a {
+.sign .details a,
+.globoplay a {
     width: fit-content;
     color: var(--black);
     background-color: var(--yellow-500);
@@ -215,30 +257,19 @@
     font-size: 3rem;
 }
 
-.sale div:first-child a {
-    width: fit-content;
-    color: var(--black);
-    background-color: var(--yellow-500);
-    border: none;
-    border-radius: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 1rem;
-}
-
 .sale div:first-child span {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
+    max-width: 300px;
 }
 
 .sale .card {
     height: 100%;
-    width: 100%;
-    min-width: 300px;
-    max-width: 450px;
+    min-width: 320px;
+    min-height: 400px;
     border-radius: 10px;
     background-color: var(--purple-500); 
     color: var(--white);
-    padding: 1rem;
+    padding: 2rem 1rem;
 
     display: flex;
     flex-direction: column;
@@ -262,10 +293,32 @@
     display: inline-block;
     width: 100%;
     font-size: 3rem;
+    font-weight: 700;
+}
+
+.sale .card > span {
+    margin-top: -1rem;
 }
 
 .sale .card ul {
     list-style-image: url('../img/check.svg');
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.sale .card ul li + li{
+    margin-top: 0.5rem;
+}
+
+.sale .card a {
+    width: fit-content;
+    color: var(--black);
+    background-color: var(--yellow-500);
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1rem;
 }
 
 .benefits {
@@ -440,18 +493,25 @@
     color: var(--white);
     padding: 3rem 2rem;
     text-align: center;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
 }
 
-.partners h2 {
+.partners > img {
+    padding: 3rem;
+}
+
+.partners > div h2 {
     font-size: 5rem;
     font-weight: 900;
 }
 
-.partners span {
+.partners > div span {
     font-size: 1.5rem;
 }
 
-.partners > div {
+.partners > div > div {
     margin-top: 3rem;
 
     display: flex;
@@ -461,19 +521,90 @@
     gap: 0 1rem;
 }
 
-.partners img {
+.partners > div img {
     width: 10%;
 }
 
-/* .partners ul {
-    font-size: 2rem;
-    font-weight: 900;
-    list-style: none;
+.events {
+    background-color: var(--pink-500);
+    color: var(--white);
+    padding: 2rem 0 0 2rem;
+    min-height: 500px;
 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+.events > img {
+    max-width: 300px;
+
+    justify-self: flex-end;
+}
+
+.events .list {
     display: flex;
-    justify-content: center;
     gap: 1rem;
-} */
+}
+
+.events .list img {
+    max-width: 100px;
+}
+
+.events .list ul {
+    margin: 0 1rem;
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    list-style: none;
+}
+
+.events .list ul li + li {
+    margin-top: 1rem;
+}
+
+.events .musician {
+    height: 100%;
+    overflow: hidden;
+    
+    position: relative;
+}
+
+.events .musician img {
+    position: absolute;
+}
+
+.events .musician #man {
+    margin-bottom: -6rem;
+
+    position: relative;
+}
+
+.events .musician #background {
+    margin: auto;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.events .musician #notes {
+    max-width: 8rem;
+    transform: rotate(20deg);
+
+    left: 0;
+    bottom: 40%;
+}
+
+.events .musician #tickets {
+    max-width: 15rem;
+
+    right: -3rem;
+    bottom: 0;
+}
 
 .video {
     width: 100%;
