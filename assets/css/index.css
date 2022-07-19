@@ -90,7 +90,7 @@ main .globoplay .card {
 
 .sign .card,
 .globoplay .card {
-    height: 100%;
+    min-height: 260px;
     border-radius: 10px;
     background-color: var(--purple-500); 
     padding: 1rem;
