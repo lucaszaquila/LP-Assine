@@ -8,6 +8,7 @@ main .globoplay .card {
     grid-area: title;
     font-size: 3rem;
     font-weight: 700;
+    text-align: center;
 }
 
 .globoplay .card img {
@@ -496,6 +497,7 @@ main .globoplay .card {
 
     display: grid;
     grid-template-columns: 1fr 2fr;
+    align-items: center;
 }
 
 .partners > img {
@@ -618,7 +620,8 @@ main .globoplay .card {
 }
 
 @media screen and (max-width: 1080px) {
-    .sign {
+    .sign,
+    .globoplay {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         grid-template-areas:
@@ -629,14 +632,22 @@ main .globoplay .card {
     }
 
     .sign .container,
-    .sign .container:last-child {
+    .sign .container:last-child,
+    .globoplay .card,
+    .globoplay .card:last-child {
         justify-self: center;
     }
 
     .sale {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: 200px repeat(2, 1fr);
         gap: 2rem;
+    }
+
+    main .globoplay .card,
+    .sale .card {
+        width: 100%;
+        max-width: 500px;
     }
 
     .benefits .side:last-child {
@@ -669,6 +680,19 @@ main .globoplay .card {
 
         position: static;
     }
+
+    .events {
+        grid-template-columns: 1fr 1fr;
+        padding: 2rem;
+    }
+
+    .events .list ul {
+        width: 100%;
+    }
+
+    .events .musician {
+        display: none;
+    }
 }
 
 @media (max-width: 720px) {
@@ -685,11 +709,35 @@ main .globoplay .card {
         min-width: 0;
     }
 
-    .partners h2 {
+    .partners,
+    .events {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .partners > img {
+        max-width: 300px;
+    }
+
+    .partners > div h2 {
         font-size: 4rem;
     }
 
-    .partners img {
+    .partners > div img {
         width: 20%;
+    }
+
+    .events > img {
+        justify-self: center;
+        max-width: 240px;
+    }
+
+    .events .list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .events .list img {
+        max-width: 70px;
     }
 }
