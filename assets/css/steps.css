@@ -215,6 +215,7 @@ form .line {
 form .field .bank img { 
     display: block;
     height: 60px;
+    transform: scale(0.8);
 
     transition: filter 0.3s ease-in-out;
 }
