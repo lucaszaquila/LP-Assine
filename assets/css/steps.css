@@ -69,6 +69,15 @@ form {
     gap: 1rem;
 }
 
+form h2 {
+    grid-area: 1 / 1 / 1 / -1;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    width: fit-content !important;
+}
+
 form div[data-payment="credit"],
 form div[data-payment="debit"],
 form div[data-payment="ticket"],
@@ -90,6 +99,10 @@ form.address div[data-payment="address"] {
 form.address div[data-payment="address-flex"],
 form.debit div[data-payment="debit-flex"] {
     display: flex;
+}
+
+form .line {
+    grid-area: var(--number) / 1 / var(--number) / -1;
 }
 
 form .field {
@@ -130,6 +143,30 @@ form .field img {
     display: none;
 }
 
+form .field .bank img { 
+    display: block;
+    height: 60px;
+    transform: scale(0.8);
+
+    transition: filter 0.3s ease-in-out;
+}
+
+form .field .bank input { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+form .field .bank input + img {
+    cursor: pointer;
+    filter: brightness(1.2) saturate(0) opacity(0.8);
+}
+  
+form .field .bank input:checked + img {
+    filter: none;
+}
+
 form .container {
     display: flex;
     justify-content: space-between;
@@ -158,23 +195,6 @@ form button {
     font-weight: 700;
 
     justify-self: end;
-}
-
-form h2 {
-    grid-area: 1 / 1 / 1 / -1;
-}
-
-form input[type="radio"],
-form input[type="checkbox"] {
-    width: fit-content;
-}
-
-form div[data-payment="debit"] {
-    display: none;
-}
-
-form .line {
-    grid-area: var(--number) / 1 / var(--number) / -1;
 }
 
 .confetti {
@@ -210,28 +230,9 @@ form .line {
     form .field img {
         display: block;
     }
+
+    form .hide {
+        display: none !important;
+    }
 }
 
-form .field .bank img { 
-    display: block;
-    height: 60px;
-    transform: scale(0.8);
-
-    transition: filter 0.3s ease-in-out;
-}
-
-form .field .bank input { 
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-  
-form .field .bank input + img {
-    cursor: pointer;
-    filter: brightness(1.2) saturate(0) opacity(0.8);
-}
-  
-form .field .bank input:checked + img {
-    filter: none;
-}
