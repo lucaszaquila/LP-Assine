@@ -37,7 +37,7 @@
         <header>
             <span>Você está assinando</span>
             <h1>A Tribuna Digital Anual</h1>
-            <span>em até 12x de R$9,90</span>
+            <span>1ª parcela de R$1,90 e o restante em até 11x de R$9,90</span>
 
             <div>
                 <div style="background-color: var(--purple-500);"></div>
@@ -77,12 +77,12 @@
             <div class="field" data-payment="credit" >
                 <label for="state">Parcelas</label>
                 <select name="credit-installments" id="credit-installments">
-                    <option value="1" default selected>À vista</option>
+                    <option value="1" default selected>À vista - R$($VALOR)</option>
                     <option value="12">12x de R$9,90</option>
                 </select>
             </div>
 
-            <div data-payment="credit" style="grid-area: 3 / 2 / 3 / 2;"></div>
+            <div data-payment="credit" class="hide" style="grid-area: 3 / 2 / 3 / 2;"></div>
 
             <div class="field" data-payment="credit">
                 <label for="card">Nº do cartão</label> 
@@ -139,12 +139,12 @@
             <div class="field" data-payment="debit" >
                 <label for="state">Parcelas</label>
                 <select name="debit-installments" id="debit-installments">
-                    <option value="1" default selected>À vista</option>
+                    <option value="1" default selected>À vista - R$($VALOR)</option>
                     <option value="12">12x de R$9,90</option>
                 </select>
             </div>
 
-            <div data-payment="debit" style="grid-area: 5 / 2 / 5 / 2;"></div>
+            <div data-payment="debit" class="hide" style="grid-area: 5 / 2 / 5 / 2;"></div>
 
             <div class="field line" style="--number:6" data-payment="debit">
                 <label for="holder">Titular:</label>
@@ -188,12 +188,12 @@
             <div class="container address line" style="--number:4" data-payment="address-flex">
                 <div class="field">
                     <label for="cep">CEP</label>
-                    <input type="text" name="cep" id="cep" data-js="cep"  inputmode="numeric">
+                    <input type="text" name="cep" id="cep" data-addresstype="charge" data-js="cep"  inputmode="numeric">
                 </div>
 
                 <div class="field">
                     <label for="address">Endereço</label>
-                    <input type="text" name="address" id="address" data-field="logradouro" data-reset="true">
+                    <input type="text" name="address" id="address" data-address="charge" data-field="logradouro" data-reset="true">
                 </div>
 
                 <div class="field">
@@ -204,17 +204,17 @@
 
             <div class="field" data-payment="address">
                 <label for="complement">Complemento</label>
-                <input type="text" name="complement" id="complement" data-field="complemento" data-reset="true">
+                <input type="text" name="complement" id="complement" data-address="charge" data-field="complemento" data-reset="true">
             </div>
 
             <div class="field" data-payment="address">
                 <label for="district">Bairro</label>
-                <input type="text" name="district" id="district" data-field="bairro" data-reset="true">
+                <input type="text" name="district" id="district" data-address="charge" data-field="bairro" data-reset="true">
             </div>
 
             <div class="field" data-payment="address">
                 <label for="state">Estado</label>
-                <select name="state" id="state" data-field="uf" data-reset="true">
+                <select name="state" id="state" data-field="uf" data-address="charge" data-reset="true">
                     <option value="" default selected disabled hidden></option>
                     <option value="SP">São Paulo</option>
                 </select>
@@ -222,7 +222,7 @@
 
             <div class="field" data-payment="address">
                 <label for="city">Cidade</label>
-                <select name="city" id="city" data-field="ibge" data-reset="true">
+                <select name="city" id="city" data-field="ibge" data-address="charge" data-reset="true">
                     <option value="" default selected disabled hidden></option>
                     <option value="3506359">Bertioga</option>
                     <option value="3513504">Cubatão</option>
@@ -234,9 +234,16 @@
                 </select>
             </div>
 
-            <div class="field line" data-payment="ticket" style="--number:7">
+            <div class="field line" data-payment="ticket" style="--number:8">
                 <input type="checkbox" name="payment-address" id="payment-address" checked>
                 <label for="payment-address" style="color: var(--gray-500); font-weight: normal;">Utilizar endereço do cadastro como endereço de cobrança</label>
+            </div>
+
+            <div class="field line" style="--number:7" data-payment="ticket pix">
+                <p style="color: var(--gray-500); font-weight: normal;">
+                    <span style="font-weight: 700;">ATENÇÃO:</span>
+                    Nesta modalidade de pagamento o valor do plano será à vista R$($VALOR).
+                </p>
             </div>
 
             <!-- Next Step -->
