@@ -3,19 +3,19 @@
 }
 
 main {
+    padding: 2rem;
     background-color: var(--gray-400);
     min-height: calc(100vh - 279px);
 }
 
 h1 {
     text-align: center;
-    padding: 2rem 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 details summary {
     font-size: 1.1rem;
     cursor: pointer;
-
 }
 
 details summary::before {
@@ -46,7 +46,6 @@ details summary::marker {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
 
     display: flex;
     flex-wrap: wrap;
@@ -83,4 +82,17 @@ details .answer {
 details p span,
 details p a {
     font-weight: 700;
+}
+
+main > a {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto 0 auto;
+    color: var(--black);
+    background-color: var(--yellow-500);
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
 }
