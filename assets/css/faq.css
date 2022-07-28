@@ -3,7 +3,8 @@
 }
 
 main {
-    background-color: var(--gray-400)
+    background-color: var(--gray-400);
+    min-height: calc(100vh - 279px);
 }
 
 h1 {
@@ -44,7 +45,6 @@ details summary::marker {
     color: var(--white);
     width: 100%;
     max-width: 1200px;
-    min-height: calc(100vh - 279px);
     margin: 0 auto;
     padding: 2rem;
 
@@ -84,4 +84,3 @@ details p span,
 details p a {
     font-weight: 700;
 }
-
