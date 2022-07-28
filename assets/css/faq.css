@@ -1,0 +1,87 @@
+:root {
+    --color: var(--gray-800);
+}
+
+main {
+    background-color: var(--gray-400)
+}
+
+h1 {
+    text-align: center;
+    padding: 2rem 0.5rem;
+}
+
+details summary {
+    font-size: 1.1rem;
+    cursor: pointer;
+
+}
+
+details summary::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 0.5rem;
+    background-image: url(../img/angles-down.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: rotate(0deg);
+
+    transition: transform 0.3s;
+    filter: invert(99%) sepia(0%) saturate(7498%) hue-rotate(63deg) brightness(118%) contrast(100%);
+}
+
+details[open] > summary:before {
+    transform: rotate(-90deg);
+}
+
+details summary::marker {
+    content: '';
+}
+
+.faq {
+    color: var(--white);
+    width: 100%;
+    max-width: 1200px;
+    min-height: calc(100vh - 279px);
+    margin: 0 auto;
+    padding: 2rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 1rem;
+}
+
+.faq > details {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--color);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+}
+
+.faq > details details {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 0.5rem 0 0 1rem;
+    padding: 0.8rem;
+    border-radius: 5px;
+}
+
+details .question {
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+details .answer {
+    font-size: 0.9rem;
+}
+
+details p span,
+details p a {
+    font-weight: 700;
+}
+
