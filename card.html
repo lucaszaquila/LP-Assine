@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Central do Assinante | Cadastro de cartão</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/global.css" />
+    <link rel="stylesheet" href="./assets/css/card.css" />
+
+    <!-- Scripts -->
+    <script defer src="./assets/js/masks.js"></script>
+    <script defer src="./assets/js/message.js"></script>
+    <script async defer src="https://www.google.com/recaptcha/api.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="https://www.atribuna.com.br">
+        <img src="./assets/img/atribuna.svg" alt="A Tribuna" />
+      </a>
+
+      <div class="wpp-container">
+        <img src="./assets/img/whatsapp.png" alt="Whatsapp" />
+        <span>(13) 2102-7200</span>
+        <span>Central do Assinante</span>
+      </div>
+    </nav>
+
+    <main>
+      <h1>Cadastro de Cartão de Crédito</h1>
+
+      <form action="">
+        <label for="number">Número do Cartão</label>
+        <input type="text" name="number" inputmode="numeric" maxlength="16"/>
+
+        <label for="name">Nome impresso</label>
+        <input type="text" name="name"/>
+
+        <label for="validity">Validade <span>(MM/AAAA)</span></label>
+        <input data-js="date2" type="text" name="validity" inputmode="numeric"/>
+
+        <label for="code">Código de Segurança</label>
+        <input type="text" name="code" inputmode="numeric"/>
+
+        <button
+          class="g-recaptcha"
+          data-sitekey="6Ldy6HkhAAAAANq5gqUFQ8NEarj2Jf4nVWw15YyR"
+          data-callback="onSubmit"
+          data-action="submit"
+        >
+          Confirmar
+        </button>
+      </form>
+
+      <div id="message">Cartão cadastrado com sucesso! você irá ser redirecionado para a Central do Assinante em 5 segundos.</div>
+    </main>
+
+    <footer>
+      <ul>
+        <li><a href="https://www.atribuna.com.br">Portal A Tribuna</a></li>
+        <li><a href="https://clube.atribuna.com.br">Clube A Tribuna</a></li>
+        <li>
+          <a href="https://edicaodigital.atribuna.com.br">Edição Digital</a>
+        </li>
+      </ul>
+      <div>
+        <p style="text-transform: uppercase">
+          A Tribuna de Santos Jornal e Editora LTDA | CNPJ: 58.183.401/0001-04
+        </p>
+        <p>Rua João Pessoa, 350 - Paquetá, Santos/SP - 11013-002</p>
+        <p>
+          Central de Atendimento:
+          <img src="./assets/img/whatsapp.svg" alt="Whatsapp" /> (13)2102-7200 |
+          atendimento@grupo-tribuna.com <br />
+          De segunda a sexta, das 7h às 18h | Aos sábados, domingos e feriados
+          das 7h às 12h
+        </p>
+      </div>
+    </footer>
+    <script>
+      function onSubmit(token) {
+        document.querySelector("form").submit();
+      }
+    </script>
+  </body>
+</html>
