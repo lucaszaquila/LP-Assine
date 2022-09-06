@@ -1,18 +1,63 @@
 main .globoplay .card {
     text-align: center;  
     max-width: 400px;
-    padding: 1rem 3rem;
+    padding: 1rem 2rem;
+    color: var(--black);
+    background-color: var(--white);
+
+    z-index: 5;
 }
 
-.globoplay h2 {
+.globoplay {
+    position: relative
+}
+
+.globoplay:before {
+    content: '';
+
+    display: block;
+    width: 30%;
+    height: 100%;
+    background-image: url("../img/hebe.png");
+    background-size: cover;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+
+    filter: opacity(0.2);
+    -webkit-box-shadow: inset -12px 0px 100px 100px var(--blue-700); 
+    box-shadow: inset -12px 0px 100px 100px var(--blue-700);
+}
+
+.globoplay:after {
+    content: 'Confira mais opções de planos';
+    display: block;
+
+    position: absolute;
+    bottom: 1rem;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.globoplay > h2 {
     grid-area: title;
     font-size: 3rem;
-    font-weight: 500;
+    font-weight: 700;
     text-align: center;
+    line-height: 3rem;
+    z-index: 5;
 }
 
-.globoplay h2 span{
-    font-weight: 700;
+.globoplay > h2 span {
+    font-weight: 900;
+}
+
+.globoplay > h2 p {
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-top: 1rem;
 }
 
 .globoplay .card img {
@@ -45,7 +90,7 @@ main .globoplay .card {
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px 1fr;
+    grid-template-rows: 150px 1fr;
     grid-template-areas:
     "title title"
     "card1 card2";
@@ -78,8 +123,7 @@ main .globoplay .card {
     justify-self: flex-start;
 }
 
-.sign .container:last-child .card,
-.globoplay .card:last-child  {
+.sign .container:last-child .card {
     color: var(--black);
     background-color: var(--white);
 }
@@ -623,7 +667,21 @@ main .globoplay .card {
     aspect-ratio: 16 / 9;
 }
 
+@media screen and (min-width: 1550px) {
+    .globoplay:before {
+        transform: translateX(30%);
+        filter: opacity(0.09);
+        -webkit-box-shadow: inset 0px 0px 50px 85px var(--blue-700);
+        box-shadow: inset 0px 0px 50px 85px var(--blue-700);
+        border-radius: 200px;
+    }
+}
+
 @media screen and (max-width: 1080px) {
+    .globoplay:before {
+        display: none;
+    }
+
     .sign,
     .globoplay {
         grid-template-columns: 1fr;
